@@ -87,7 +87,7 @@ const Shop = () => {
                 {categories.map(category => (
                   <button
                     key={category}
-                    className={`btn ${selectedCategory === category ? 'btn-primary' : 'btn-outline-primary'}`}
+                    className={`btn ${selectedCategory === category ? 'btn-danger' : 'btn-outline-danger'}`}
                     onClick={() => setSelectedCategory(category)}
                   >
                     {category}
@@ -146,7 +146,7 @@ const Shop = () => {
           <div className="d-flex gap-2 justify-content-center">
                 <Link 
                   to={`/product/${product.id}`} 
-                  className="btn btn-outline-primary btn-sm flex-fill"
+                  className="btn btn-outline-danger btn-sm flex-fill"
                 >
                   View Details
                 </Link>
