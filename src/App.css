@@ -480,7 +480,6 @@ background-image: url("public/Banner/banner4.jpg");
   font-size: 0.9rem;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .banner-title {
     font-size: 2.5rem;
@@ -496,5 +495,74 @@ background-image: url("public/Banner/banner4.jpg");
 
   .logo {
     font-size: 2rem;
+  }
+}
+
+.home-product-card {
+  background: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 12px rgba(20,40,60,0.08);
+  overflow: hidden;
+  transition: box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home-product-card:hover {
+  box-shadow: 0 4px 22px rgba(20,40,60,0.16);
+}
+
+.home-product-image {
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+  width: 100%;
+  object-fit: cover;
+  height: 220px;
+}
+
+.home-card-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.15rem;
+}
+
+.home-text-danger {
+  color: #d32f2f;
+}
+.home-star {
+  color: #ffbf00;
+}
+
+.home-btn-outline-primary {
+  border: 1.5px solid #3763eb;
+  color: #3763eb;
+  background: #fff;
+  transition: 0.2s;
+}
+.home-btn-outline-primary:hover {
+  background: #3763eb;
+  color: #fff;
+}
+
+
+@media (max-width: 991.98px) {
+  .col-lg-3.home-grid-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .col-lg-3.home-grid-col,
+  .col-md-4.home-grid-col,
+  .col-sm-6.home-grid-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .home-product-card {
+    margin-bottom: 1.2rem;
+  }
+  .home-product-image {
+    height: 180px;
   }
 }

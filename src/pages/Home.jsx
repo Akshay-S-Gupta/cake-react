@@ -5,7 +5,7 @@ import { useCart } from "../context/CartContext";
 import Newsletter from "../components/Newsletter";
 
 const Home = () => {
-  const featuredProducts = products.slice(0, 5);
+  const featuredProducts = products.slice(0, 4);
   const { addToCart, isInCart } = useCart();
 
   const handleCartClick = (product) => {
@@ -47,48 +47,48 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="row">
-            {featuredProducts.map((product) => (
-              <div key={product.id} className="col-lg-2 col-md-4 col-sm-6 mb-4">
-                <div className="card product-card h-100">
-                  <img
-                    src={product.mainImage}
-                    className="card-img-top product-image"
-                    alt={product.name}
-                  />
-                  <div className="card-body text-center">
-                    <h5 className="card-title product-title">{product.name}</h5>
-                    <p className="card-text product-price">
-                      ${product.price.toFixed(2)}
-                    </p>
-                    <div className="d-flex gap-2 justify-content-center">
-                      <Link
-                        to={`/product/${product.id}`}
-                        className="btn btn-outline-primary btn-sm flex-fill"
-                      >
-                        View Details
-                      </Link>
-                      <button
-                        className={`btn btn-sm ${
-                          isInCart(product.id)
-                            ? "btn-success"
-                            : "btn-primary-custom"
-                        }`}
-                        onClick={() => handleCartClick(product)}
-                        style={{ minWidth: "40px" }}
-                      >
-                        {isInCart(product.id) ? (
-                          <i className="fas fa-check"></i>
-                        ) : (
-                          <i className="fas fa-shopping-cart"></i>
-                        )}
-                      </button>
-                    </div>
-                  </div>
-                </div>
+   <div className="row g-4 justify-content-center">
+      {featuredProducts.map((product) => (
+        <div key={product.id} className="col-lg-3 col-md-4 col-sm-6 home-grid-col">
+          <div className="home-product-card h-100 border-0">
+            <img
+              src={product.mainImage}
+              alt={product.name}
+              className="home-product-image"
+              style={{ objectFit: "cover", height: "220px" }}
+            />
+            <div className="card-body text-center">
+              <h5 className="home-card-title home-script-font mb-2">{product.name}</h5>
+              <div className="mb-2">
+                {product.originalPrice && (
+                  <span className="me-2 text-muted" style={{ textDecoration: "line-through" }}>
+                    ${product.originalPrice.toFixed(2)}
+                  </span>
+                )}
+                <span className="fw-bold home-text-danger">${product.price.toFixed(2)}</span>
               </div>
-            ))}
+              <div className="mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <i
+                    key={i}
+                    className={
+                      product.rating >= i + 1
+                        ? "fas fa-star home-star"
+                        : "far fa-star home-star"
+                    }
+                  ></i>
+                ))}
+                <span className="ms-2 text-muted">({product.rating})</span>
+              </div>
+              <Link to={`/product/${product.id}`} className="btn home-btn-outline-primary w-100">
+                View Details
+              </Link>
+            </div>
           </div>
+        </div>
+      ))}
+    </div>
+
         </div>
       </section>
 
