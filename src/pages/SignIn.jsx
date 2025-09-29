@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { userService } from '../services/userService';
-import { formService } from '../services/formService';
-import { useUser } from '../context/UserContext';
-import Newsletter from '../components/Newsletter';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { userService } from "../services/userService";
+import { formService } from "../services/formService";
+import { useUser } from "../context/UserContext";
+import Newsletter from "../components/Newsletter";
 
 const SignIn = () => {
   const navigate = useNavigate();
   const { login } = useUser();
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    rememberMe: false
+    email: "",
+    password: "",
+    rememberMe: false,
   });
 
   const [errors, setErrors] = useState({});
@@ -19,17 +19,17 @@ const SignIn = () => {
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
-    
-    setFormData(prev => ({
+
+    setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === "checkbox" ? checked : value,
     }));
 
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        [name]: ''
+        [name]: "",
       }));
     }
   };
@@ -39,14 +39,14 @@ const SignIn = () => {
 
     // Email validation
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     } else if (!formService.validateEmail(formData.email)) {
-      newErrors.email = 'Email is invalid';
+      newErrors.email = "Email is invalid";
     }
 
     // Password validation
     if (!formData.password) {
-      newErrors.password = 'Password is required';
+      newErrors.password = "Password is required";
     }
 
     setErrors(newErrors);
@@ -55,7 +55,7 @@ const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -69,29 +69,33 @@ const SignIn = () => {
         result = await formService.submitLoginForm(formData);
         if (result.success) {
           login(result.data.user);
-          alert('Welcome back! You have successfully signed in.');
-          navigate('/');
+          alert("Welcome back! You have successfully signed in.");
+          navigate("/");
         } else {
           throw new Error(result.error);
         }
       } catch (httpError) {
-        console.log('HTTP login failed, using local method:', httpError);
+        console.log("HTTP login failed, using local method:", httpError);
         // Fallback to local login
-        const user = userService.validateCredentials(formData.email, formData.password);
+        const user = userService.validateCredentials(
+          formData.email,
+          formData.password
+        );
         if (user) {
           login(user);
-          alert('Welcome back! You have successfully signed in.');
-          navigate('/');
+          alert("Welcome back! You have successfully signed in.");
+          navigate("/");
         } else {
-          setErrors({ 
-            general: 'Invalid email or password. Please check your credentials and try again.' 
+          setErrors({
+            general:
+              "Invalid email or password. Please check your credentials and try again.",
           });
         }
       }
     } catch (error) {
-      console.error('Error signing in:', error);
-      setErrors({ 
-        general: formService.handleFormError(error.message) 
+      console.error("Error signing in:", error);
+      setErrors({
+        general: formService.handleFormError(error.message),
       });
     } finally {
       setIsSubmitting(false);
@@ -108,7 +112,9 @@ const SignIn = () => {
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb justify-content-center">
                 <li className="breadcrumb-item">
-                  <a href="/" className="text-white text-decoration-none">Home</a>
+                  <a href="/" className="text-white text-decoration-none">
+                    Home
+                  </a>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
                   Sign In
@@ -143,7 +149,9 @@ const SignIn = () => {
                       <label className="form-label">Email Address *</label>
                       <input
                         type="email"
-                        className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                        className={`form-control ${
+                          errors.email ? "is-invalid" : ""
+                        }`}
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
@@ -160,7 +168,9 @@ const SignIn = () => {
                       <label className="form-label">Password *</label>
                       <input
                         type="password"
-                        className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                        className={`form-control ${
+                          errors.password ? "is-invalid" : ""
+                        }`}
                         name="password"
                         value={formData.password}
                         onChange={handleInputChange}
@@ -168,7 +178,9 @@ const SignIn = () => {
                         disabled={isSubmitting}
                       />
                       {errors.password && (
-                        <div className="invalid-feedback">{errors.password}</div>
+                        <div className="invalid-feedback">
+                          {errors.password}
+                        </div>
                       )}
                     </div>
 
@@ -183,9 +195,7 @@ const SignIn = () => {
                           onChange={handleInputChange}
                           disabled={isSubmitting}
                         />
-                        <label className="form-check-label">
-                          Remember me
-                        </label>
+                        <label className="form-check-label">Remember me</label>
                       </div>
                     </div>
 
@@ -196,50 +206,31 @@ const SignIn = () => {
                         className="btn btn-primary-custom btn-lg px-5"
                         disabled={isSubmitting}
                       >
-                        {isSubmitting ? 'Signing In...' : 'Sign In'}
+                        {isSubmitting ? "Signing In..." : "Sign In"}
                       </button>
                     </div>
 
                     {/* Links */}
                     <div className="text-center">
                       <p className="mb-2">
-                        <Link to="/forgot-password" className="text-primary text-decoration-none">
+                        <Link
+                          to="/forgot-password"
+                          className="text-primary text-decoration-none"
+                        >
                           Forgot your password?
                         </Link>
                       </p>
                       <p className="mb-0">
-                        Don't have an account? 
-                        <Link to="/signup" className="text-primary text-decoration-none ms-1">
+                        Don't have an account?
+                        <Link
+                          to="/signup"
+                          className="text-primary text-decoration-none ms-1"
+                        >
                           Sign Up
                         </Link>
                       </p>
                     </div>
                   </form>
-                </div>
-              </div>
-
-              {/* Demo Credentials */}
-              <div className="card mt-4">
-                <div className="card-header">
-                  <h6 className="mb-0">Demo Credentials</h6>
-                </div>
-                <div className="card-body">
-                  <div className="row">
-                    <div className="col-md-6">
-                      <strong>Admin Account:</strong><br />
-                      <small className="text-muted">
-                        Email: admin@cakestore.com<br />
-                        Password: admin123
-                      </small>
-                    </div>
-                    <div className="col-md-6">
-                      <strong>Customer Account:</strong><br />
-                      <small className="text-muted">
-                        Email: john.doe@example.com<br />
-                        Password: password123
-                      </small>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

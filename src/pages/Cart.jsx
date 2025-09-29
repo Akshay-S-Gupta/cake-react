@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import Newsletter from '../components/Newsletter';
-import './css/Cart.css';
 
 const Cart = () => {
   const { items, removeFromCart, updateQuantity, getTotalPrice } = useCart();
