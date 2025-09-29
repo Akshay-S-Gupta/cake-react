@@ -375,7 +375,7 @@ export const teamMembers = [
     id: 2,
     name: "Ms Maria S",
     position: "Frontend Dev",
-    image: "public/team/maria.jpg"
+    image: "public/team/Maria.jpg"
   },
   {
     id: 3,
