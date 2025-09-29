@@ -21,10 +21,6 @@ body {
   padding: 0;
 }
 
-.banner-section {
-  background: var(--blue-gradient);
-  padding: 45px 0 25px 0;
-}
 .banner-title {
   font-size: 2.75rem;
   font-weight: 700;
