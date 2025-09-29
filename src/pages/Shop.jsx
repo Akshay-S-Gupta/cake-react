@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { products, categories } from '../services/database';
 import { useCart } from '../context/CartContext';
 import Newsletter from '../components/Newsletter';
+import './css/Shop.css';
+
 
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -99,50 +101,60 @@ const Shop = () => {
           <div className="row">
             {sortedProducts.map((product) => (
               <div key={product.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div className="card product-card h-100">
-                  <img 
-                    src={product.mainImage} 
-                    className="card-img-top product-image" 
-                    alt={product.name}
-                  />
-                  <div className="card-body text-center">
-                    <h5 className="card-title product-title">{product.name}</h5>
-                    <p className="card-text product-price">
-                      {product.originalPrice && (
-                        <span className="original-price">${product.originalPrice.toFixed(2)}</span>
-                      )}
-                      ${product.price.toFixed(2)}
-                    </p>
-                    <div className="d-flex justify-content-center mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <i 
-                          key={i} 
-                          className={`fas fa-star ${i < Math.floor(product.rating) ? 'text-warning' : 'text-muted'}`}
-                        ></i>
-                      ))}
-                      <span className="ms-2 text-muted">({product.rating})</span>
-                    </div>
-                    <div className="d-flex gap-2 justify-content-center">
-                      <Link 
-                        to={`/product/${product.id}`} 
-                        className="btn btn-outline-primary btn-sm flex-fill"
-                      >
-                        View Details
-                      </Link>
-                      <button 
-                        className={`btn btn-sm ${isInCart(product.id) ? 'btn-success' : 'btn-primary-custom'}`}
-                        onClick={() => handleCartClick(product)}
-                        style={{minWidth: '40px'}}
-                      >
-                        {isInCart(product.id) ? (
-                          <i className="fas fa-check"></i>
-                        ) : (
-                          <i className="fas fa-shopping-cart"></i>
-                        )}
-                      </button>
-                    </div>
-                  </div>
+       <div className="card product-card h-100">
+            <div className="product-image-wrapper position-relative">
+              <img
+                src={product.mainImage}
+                className="card-img-top product-image"
+                alt={product.name}
+              />
+              {/* Floating cart/tick icon */}
+              <button
+                className={`cart-icon-btn${isInCart(product.id) ? ' added' : ''}`}
+                type="button"
+                onClick={() => addToCart(product)}
+                aria-label={isInCart(product.id) ? "Added to cart" : "Add to cart"}
+              >
+                <img
+                  src={isInCart(product.id)
+                    ? '/images/tick.png'
+                    : '/images/cart.png'}
+                  alt={isInCart(product.id) ? "Added to cart" : "Add to cart"}
+                  className="cart-icon-img"
+                />
+              </button>
+            </div>
+            <div className="card-body text-center d-flex flex-column">
+              <div className="product-info">
+                <h5 className="card-title product-title">{product.name}</h5>
+                <p className="card-text product-price">
+                  {product.originalPrice && (
+                    <span className="original-price">${product.originalPrice.toFixed(2)}</span>
+                  )}
+                  ${product.price.toFixed(2)}
+                </p>
+                <div className="d-flex justify-content-center mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <i
+                      key={i}
+                      className={`fas fa-star ${i < Math.floor(product.rating) ? 'text-warning' : 'text-muted'}`}
+                    ></i>
+                  ))}
+                  <span className="ms-2 text-muted">({product.rating})</span>
                 </div>
+              </div>
+          <div className="d-flex gap-2 justify-content-center">
+                <Link 
+                  to={`/product/${product.id}`} 
+                  className="btn btn-outline-primary btn-sm flex-fill"
+                >
+                  View Details
+                </Link>
+                {/* Cart/tick button REMOVED from here */}
+              </div>
+            </div>
+          </div>
+
               </div>
             ))}
           </div>

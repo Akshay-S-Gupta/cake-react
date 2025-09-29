@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="container-fluid">
         <div className="row">
-          {/* Cake Store Info */}
+          
           <div className="col-lg-3 col-md-6 mb-4">
             <h4 className="footer-logo">Cake Store</h4>
             <p className="footer-text">

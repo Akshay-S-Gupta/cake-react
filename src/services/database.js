@@ -10,13 +10,13 @@ export const products = [
     category: "Donuts",
     description: "Delicious donuts with colorful sprinkles, perfect for any occasion. Made with fresh ingredients and topped with premium sprinkles.",
     images: [
-      "https://picsum.photos/300/300?random=2",
-      "https://picsum.photos/300/300?random=3",
-      "https://picsum.photos/300/300?random=4",
-      "https://picsum.photos/300/300?random=5",
-      "https://picsum.photos/300/300?random=6"
+      "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/600/400?random=1",
+    mainImage: "/images/cake1.jpg",
     additionalInfo: "These donuts are made fresh daily with premium ingredients. Perfect for breakfast, dessert, or any special occasion.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: [
@@ -44,10 +44,13 @@ export const products = [
     category: "Pastries",
     description: "Rich chocolate pastry with layers of cream and fresh berries.",
     images: [
-      "https://picsum.photos/300/300?random=7",
-      "https://picsum.photos/300/300?random=8"
+      "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/300/300?random=7",
+    mainImage: "/images/cake2.jpg",
     additionalInfo: "Made with premium Belgian chocolate and fresh seasonal berries.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
@@ -62,10 +65,13 @@ export const products = [
     category: "Cupcakes",
     description: "Delicious cupcake with chocolate frosting and fresh raspberry.",
     images: [
-      "https://picsum.photos/300/300?random=9",
-      "https://picsum.photos/300/300?random=10"
+      "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/300/300?random=9",
+    mainImage: "/images/cake4.jpg",
     additionalInfo: "Handcrafted cupcakes with premium ingredients.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
@@ -80,10 +86,13 @@ export const products = [
     category: "Macarons",
     description: "Delicate macarons with fresh berry filling.",
     images: [
-      "https://picsum.photos/300/300?random=11",
-      "https://picsum.photos/300/300?random=12"
+      "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/300/300?random=11",
+    mainImage: "/images/cake5.jpg",
     additionalInfo: "French-style macarons with seasonal berry filling.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
@@ -98,10 +107,13 @@ export const products = [
     category: "Cakes",
     description: "Elegant wedding cake perfect for special occasions.",
     images: [
-      "https://picsum.photos/300/300?random=13",
-      "https://picsum.photos/300/300?random=14"
+      "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/300/300?random=13",
+    mainImage: "/images/cake3.jpg",
     additionalInfo: "Custom wedding cakes available upon request.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
@@ -116,10 +128,13 @@ export const products = [
     category: "Accessories",
     description: "Premium coffee cup for your morning brew.",
     images: [
-      "https://picsum.photos/300/300?random=15",
-      "https://picsum.photos/300/300?random=16"
+      "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/300/300?random=15",
+    mainImage: "/images/cake4.jpg",
     additionalInfo: "High-quality ceramic coffee cup.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
@@ -134,10 +149,13 @@ export const products = [
     category: "Cookies",
     description: "Freshly baked chocolate chip cookies with premium chocolate chips.",
     images: [
-      "https://picsum.photos/300/300?random=31",
-      "https://picsum.photos/300/300?random=32"
+     "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/300/300?random=31",
+    mainImage: "/images/cake3.jpg",
     additionalInfo: "Made with real butter and premium chocolate chips.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
@@ -152,10 +170,13 @@ export const products = [
     category: "Cakes",
     description: "Classic red velvet cake with cream cheese frosting.",
     images: [
-      "https://picsum.photos/300/300?random=33",
-      "https://picsum.photos/300/300?random=34"
+     "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/300/300?random=33",
+    mainImage: "/images/cake2.jpg",
     additionalInfo: "Traditional red velvet cake perfect for special occasions.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
@@ -170,10 +191,13 @@ export const products = [
     category: "Pastries",
     description: "Delicate tart with fresh strawberries and vanilla cream.",
     images: [
-      "https://picsum.photos/300/300?random=35",
-      "https://picsum.photos/300/300?random=36"
+     "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/300/300?random=35",
+    mainImage: "/images/cake1.jpg",
     additionalInfo: "Made with seasonal fresh strawberries.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
@@ -188,10 +212,13 @@ export const products = [
     category: "Cupcakes",
     description: "Classic vanilla cupcake with buttercream frosting.",
     images: [
-      "https://picsum.photos/300/300?random=37",
-      "https://picsum.photos/300/300?random=38"
+      "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/300/300?random=37",
+    mainImage: "/images/cake3.jpg",
     additionalInfo: "Simple and delicious vanilla cupcake.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
@@ -206,10 +233,13 @@ export const products = [
     category: "Pastries",
     description: "French-style chocolate eclair with rich cream filling.",
     images: [
-      "https://picsum.photos/300/300?random=39",
-      "https://picsum.photos/300/300?random=40"
+      "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/300/300?random=39",
+    mainImage: "/images/cake2.jpg",
     additionalInfo: "Authentic French pastry with chocolate glaze.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
@@ -224,10 +254,13 @@ export const products = [
     category: "Pies",
     description: "Tangy lemon filling with fluffy meringue topping.",
     images: [
-      "https://picsum.photos/300/300?random=41",
-      "https://picsum.photos/300/300?random=42"
+     "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/300/300?random=41",
+    mainImage: "/images/cake1.jpg",
     additionalInfo: "Perfect balance of sweet and tart flavors.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
@@ -242,10 +275,13 @@ export const products = [
     category: "Pastries",
     description: "Warm cinnamon roll with cream cheese glaze.",
     images: [
-      "https://picsum.photos/300/300?random=43",
-      "https://picsum.photos/300/300?random=44"
+     "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/300/300?random=43",
+    mainImage: "/images/cake4.jpg",
     additionalInfo: "Freshly baked with aromatic cinnamon.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
@@ -260,10 +296,13 @@ export const products = [
     category: "Desserts",
     description: "Classic Italian tiramisu with coffee and mascarpone.",
     images: [
-      "https://picsum.photos/300/300?random=45",
-      "https://picsum.photos/300/300?random=46"
+     "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/300/300?random=45",
+    mainImage: "/images/cake3.jpg",
     additionalInfo: "Authentic Italian dessert with espresso.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
@@ -278,10 +317,13 @@ export const products = [
     category: "Cakes",
     description: "Rich New York style cheesecake with graham cracker crust.",
     images: [
-      "https://picsum.photos/300/300?random=47",
-      "https://picsum.photos/300/300?random=48"
+     "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/300/300?random=47",
+    mainImage: "/images/cake4.jpg",
     additionalInfo: "Creamy and dense cheesecake perfection.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
@@ -296,10 +338,13 @@ export const products = [
     category: "Pastries",
     description: "Mixed fruit tart with vanilla pastry cream.",
     images: [
-      "https://picsum.photos/300/300?random=49",
-      "https://picsum.photos/300/300?random=50"
+     "/images/cake1.jpg",
+      "/images/cake2.jpg",
+      "/images/cake3.jpg",
+      "/images/cake4.jpg",
+      "/images/cake5.jpg"
     ],
-    mainImage: "https://picsum.photos/300/300?random=49",
+    mainImage: "/images/cake5.jpg",
     additionalInfo: "Fresh seasonal fruits on sweet pastry.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
