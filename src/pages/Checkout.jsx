@@ -1,41 +1,39 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
-import { useUser } from '../context/UserContext';
-import Newsletter from '../components/Newsletter';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "../context/CartContext";
+import { useUser } from "../context/UserContext";
+import Newsletter from "../components/Newsletter";
 
 const Checkout = () => {
   const navigate = useNavigate();
   const { items, getTotalPrice, clearCart } = useCart();
   const { user } = useUser();
   const [formData, setFormData] = useState({
-    firstName: user?.firstName || '',
-    lastName: user?.lastName || '',
-    companyName: '',
-    country: 'United States',
-    streetAddress: '',
-    apartment: '',
-    city: user?.address?.city || '',
-    state: user?.address?.state || 'Florida',
-    zipCode: user?.address?.zipCode || '',
-    phone: user?.phone || '',
-    email: user?.email || '',
-    orderNotes: '',
-    paymentMethod: 'paypal'
+    firstName: user?.firstName || "",
+    lastName: user?.lastName || "",
+    streetAddress: "",
+    apartment: "",
+    city: user?.address?.city || "",
+    state: user?.address?.state || "Karnataka",
+    zipCode: user?.address?.zipCode || "",
+    phone: user?.phone || "",
+    email: user?.email || "",
+    orderNotes: "",
+    paymentMethod: "paypal",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Process order and redirect to payment gateway
-    navigate('/payment');
+    navigate("/payment");
   };
 
   if (items.length === 0) {
@@ -48,7 +46,9 @@ const Checkout = () => {
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb justify-content-center">
                   <li className="breadcrumb-item">
-                    <a href="/" className="text-white text-decoration-none">Home</a>
+                    <a href="/" className="text-white text-decoration-none">
+                      Home
+                    </a>
                   </li>
                   <li className="breadcrumb-item active" aria-current="page">
                     Checkout
@@ -63,7 +63,9 @@ const Checkout = () => {
           <div className="container">
             <div className="text-center">
               <h2 className="mb-4">Your cart is empty</h2>
-              <p className="text-muted mb-4">Please add items to your cart before proceeding to checkout.</p>
+              <p className="text-muted mb-4">
+                Please add items to your cart before proceeding to checkout.
+              </p>
               <a href="/shop" className="btn btn-primary-custom">
                 Continue Shopping
               </a>
@@ -86,7 +88,9 @@ const Checkout = () => {
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb justify-content-center">
                 <li className="breadcrumb-item">
-                  <a href="/" className="text-white text-decoration-none">Home</a>
+                  <a href="/" className="text-white text-decoration-none">
+                    Home
+                  </a>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
                   Checkout
@@ -135,33 +139,6 @@ const Checkout = () => {
                     </div>
 
                     <div className="mb-3">
-                      <label className="form-label">Company Name (optional)</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        name="companyName"
-                        value={formData.companyName}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-
-                    <div className="mb-3">
-                      <label className="form-label">Country / Region *</label>
-                      <select
-                        className="form-select"
-                        name="country"
-                        value={formData.country}
-                        onChange={handleInputChange}
-                        required
-                      >
-                        <option value="United States">United States</option>
-                        <option value="Canada">Canada</option>
-                        <option value="United Kingdom">United Kingdom</option>
-                        <option value="Australia">Australia</option>
-                      </select>
-                    </div>
-
-                    <div className="mb-3">
                       <label className="form-label">Street Address *</label>
                       <input
                         type="text"
@@ -203,10 +180,10 @@ const Checkout = () => {
                           onChange={handleInputChange}
                           required
                         >
-                          <option value="Florida">Florida</option>
-                          <option value="California">California</option>
-                          <option value="New York">New York</option>
-                          <option value="Texas">Texas</option>
+                          <option value="Karnataka">Karnataka</option>
+                          <option value="Tamil Nadu">Tamil Nadu</option>
+                          <option value="Madhya Pradesh">Madhya Pradesh</option>
+                          <option value="Maharashtra">Maharashtra</option>
                         </select>
                       </div>
                     </div>
@@ -255,25 +232,6 @@ const Checkout = () => {
               <div className="col-lg-4">
                 <div className="card mb-4">
                   <div className="card-header">
-                    <h5 className="mb-0">Additional Information</h5>
-                  </div>
-                  <div className="card-body">
-                    <div className="mb-3">
-                      <label className="form-label">Order notes (optional)</label>
-                      <textarea
-                        className="form-control"
-                        rows="4"
-                        placeholder="Notes about your order. Like special notes for delivery."
-                        name="orderNotes"
-                        value={formData.orderNotes}
-                        onChange={handleInputChange}
-                      ></textarea>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="card mb-4">
-                  <div className="card-header">
                     <h5 className="mb-0">Cart Totals</h5>
                   </div>
                   <div className="card-body">
@@ -305,15 +263,12 @@ const Checkout = () => {
                           type="radio"
                           name="paymentMethod"
                           value="paypal"
-                          checked={formData.paymentMethod === 'paypal'}
+                          checked={formData.paymentMethod === "paypal"}
                           onChange={handleInputChange}
                         />
                         <label className="form-check-label">
                           <strong>PAYPAL</strong>
                         </label>
-                        <p className="small text-muted mt-1">
-                          Pay via PayPal; you can pay with your credit card if you don't have a PayPal account.
-                        </p>
                       </div>
                     </div>
 
@@ -324,15 +279,12 @@ const Checkout = () => {
                           type="radio"
                           name="paymentMethod"
                           value="upi"
-                          checked={formData.paymentMethod === 'upi'}
+                          checked={formData.paymentMethod === "upi"}
                           onChange={handleInputChange}
                         />
                         <label className="form-check-label">
                           <strong>UPI PAYMENT</strong>
                         </label>
-                        <p className="small text-muted mt-1">
-                          Pay using UPI apps like PhonePe, Google Pay, Paytm, BHIM, etc.
-                        </p>
                       </div>
                     </div>
 
@@ -343,19 +295,19 @@ const Checkout = () => {
                           type="radio"
                           name="paymentMethod"
                           value="google-pay"
-                          checked={formData.paymentMethod === 'google-pay'}
+                          checked={formData.paymentMethod === "google-pay"}
                           onChange={handleInputChange}
                         />
                         <label className="form-check-label">
                           <strong>GOOGLE PAY</strong>
                         </label>
-                        <p className="small text-muted mt-1">
-                          Quick and secure payment with Google Pay.
-                        </p>
                       </div>
                     </div>
 
-                    <button type="submit" className="btn btn-primary-custom w-100">
+                    <button
+                      type="submit"
+                      className="btn btn-primary-custom w-100"
+                    >
                       PLACE AN ORDER
                     </button>
                   </div>
