@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import Newsletter from '../components/Newsletter';
+import './css/Cart.css';
 
 const Cart = () => {
   const { items, removeFromCart, updateQuantity, getTotalPrice } = useCart();
@@ -172,9 +173,6 @@ const Cart = () => {
                   </div>
                   
                   <div className="d-grid gap-2">
-                    <button className="btn btn-outline-secondary">
-                      UPDATE CART
-                    </button>
                     <Link to="/shop" className="btn btn-outline-secondary">
                       CONTINUE SHOPPING
                     </Link>
