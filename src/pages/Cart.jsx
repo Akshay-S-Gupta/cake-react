@@ -199,7 +199,7 @@ const Cart = () => {
                       CONTINUE SHOPPING
                     </Link>
                     <Link to="/checkout" className="btn btn-primary-custom">
-                      PROCEED TO CHECKOUT
+                      CHECKOUT
                     </Link>
                   </div>
                 </div>
