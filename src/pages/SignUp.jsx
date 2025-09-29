@@ -4,6 +4,7 @@ import { userService } from '../services/userService';
 import { formService } from '../services/formService';
 import { useUser } from '../context/UserContext';
 import Newsletter from '../components/Newsletter';
+import './css/SignUp.css';
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -98,8 +99,8 @@ const SignUp = () => {
     if (!formData.phone.trim()) {
       newErrors.phone = 'Phone number is required';
     } else if (!formService.validatePhone(formData.phone)) {
-      newErrors.phone = 'Phone number must be in format XXX-XXX-XXXX';
-    }
+  newErrors.phone = 'Enter a valid 10-digit Indian mobile number';
+}
 
     // Address validation
     if (!formData.address.street.trim()) {
@@ -294,7 +295,7 @@ const SignUp = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          placeholder="XXX-XXX-XXXX"
+                          placeholder="Enter 10-digit mobile number"
                         />
                         {errors.phone && (
                           <div className="invalid-feedback">{errors.phone}</div>
@@ -379,11 +380,14 @@ const SignUp = () => {
                           onChange={handleInputChange}
                         >
                           <option value="">Select State</option>
-                          <option value="CA">California</option>
-                          <option value="NY">New York</option>
-                          <option value="TX">Texas</option>
-                          <option value="FL">Florida</option>
-                          <option value="IL">Illinois</option>
+                          <option value="MH">Maharashtra</option>
+                          <option value="TE">Telangana</option>
+                          <option value="KA">Karnataka</option>
+                          <option value="TN">Tamil Nadu</option>
+                          <option value="UP">Uttar Pradesh</option>
+                          <option value="RJ">Rajasthan</option>
+                          <option value="GJ">Gujarat</option>
+                          <option value="WB">West Bengal</option>
                         </select>
                         {errors['address.state'] && (
                           <div className="invalid-feedback">{errors['address.state']}</div>

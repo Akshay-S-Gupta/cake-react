@@ -26,7 +26,9 @@ const Cart = () => {
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb justify-content-center">
                   <li className="breadcrumb-item">
-                    <a href="/" className="text-white text-decoration-none">Home</a>
+                    <a href="/" className="text-white text-decoration-none">
+                      Home
+                    </a>
                   </li>
                   <li className="breadcrumb-item active" aria-current="page">
                     Cart
@@ -42,7 +44,9 @@ const Cart = () => {
           <div className="container">
             <div className="text-center">
               <h2 className="mb-4">Your cart is empty</h2>
-              <p className="text-muted mb-4">Looks like you haven't added any items to your cart yet.</p>
+              <p className="text-muted mb-4">
+                Looks like you haven't added any items to your cart yet.
+              </p>
               <Link to="/shop" className="btn btn-primary-custom">
                 Continue Shopping
               </Link>
@@ -65,7 +69,9 @@ const Cart = () => {
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb justify-content-center">
                 <li className="breadcrumb-item">
-                  <a href="/" className="text-white text-decoration-none">Home</a>
+                  <a href="/" className="text-white text-decoration-none">
+                    Home
+                  </a>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
                   Cart
@@ -97,23 +103,31 @@ const Cart = () => {
                       <tr key={item.id}>
                         <td>
                           <div className="d-flex align-items-center">
-                            <img 
-                              src={item.mainImage} 
+                            <img
+                              src={item.mainImage}
                               alt={item.name}
                               className="me-3"
-                              style={{width: '80px', height: '80px', objectFit: 'cover'}}
+                              style={{
+                                width: "80px",
+                                height: "80px",
+                                objectFit: "cover",
+                              }}
                             />
                             <div>
                               <h6 className="mb-1">{item.name}</h6>
-                              <p className="text-muted mb-0">${item.price.toFixed(2)}</p>
+                              <p className="text-muted mb-0">
+                                ${item.price.toFixed(2)}
+                              </p>
                             </div>
                           </div>
                         </td>
                         <td>
                           <div className="d-flex align-items-center">
-                            <button 
+                            <button
                               className="btn btn-outline-secondary btn-sm"
-                              onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
+                              onClick={() =>
+                                handleQuantityChange(item.id, item.quantity - 1)
+                              }
                             >
                               -
                             </button>
@@ -121,23 +135,32 @@ const Cart = () => {
                               type="number"
                               className="form-control text-center mx-2"
                               value={item.quantity}
-                              onChange={(e) => handleQuantityChange(item.id, parseInt(e.target.value) || 0)}
-                              style={{width: '60px'}}
+                              onChange={(e) =>
+                                handleQuantityChange(
+                                  item.id,
+                                  parseInt(e.target.value) || 0
+                                )
+                              }
+                              style={{ width: "60px" }}
                               min="0"
                             />
-                            <button 
+                            <button
                               className="btn btn-outline-secondary btn-sm"
-                              onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
+                              onClick={() =>
+                                handleQuantityChange(item.id, item.quantity + 1)
+                              }
                             >
                               +
                             </button>
                           </div>
                         </td>
                         <td>
-                          <strong>${(item.price * item.quantity).toFixed(2)}</strong>
+                          <strong>
+                            ${(item.price * item.quantity).toFixed(2)}
+                          </strong>
                         </td>
                         <td>
-                          <button 
+                          <button
                             className="btn btn-outline-danger btn-sm"
                             onClick={() => removeFromCart(item.id)}
                           >
@@ -171,7 +194,7 @@ const Cart = () => {
                     <strong>TOTAL</strong>
                     <strong>${getTotalPrice().toFixed(2)}</strong>
                   </div>
-                  
+
                   <div className="d-grid gap-2">
                     <Link to="/shop" className="btn btn-outline-secondary">
                       CONTINUE SHOPPING

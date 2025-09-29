@@ -85,7 +85,7 @@ const About = () => {
                 <li className="mb-2">• Sed do eiusmod tempor incididunt ut labore</li>
                 <li className="mb-2">• Duis aute irure dolor in reprehenderit</li>
               </ul>
-              <button className="btn btn-outline-primary">
+              <button className="btn btn-outline-danger">
                 SHOP NOW
               </button>
             </div>

@@ -142,7 +142,7 @@ export const formService = {
   },
 
   validatePhone(phone) {
-    const phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+     return /^[6-9][0-9]{9}$/.test(phone);
     return phoneRegex.test(phone);
   },
 
