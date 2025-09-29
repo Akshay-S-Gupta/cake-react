@@ -309,7 +309,7 @@ export const products = [
 export const categories = [
   "All",
   "Donuts",
-  "Pastries", 
+  "Pastries",
   "Cupcakes",
   "Macarons",
   "Cakes",
@@ -322,39 +322,21 @@ export const categories = [
 export const teamMembers = [
   {
     id: 1,
-    name: "Mrs. Nicole Sara",
-    position: "CEO-Founder",
-    image: "https://picsum.photos/300/300?random=21"
+    name: "Ms Anushka Kulkarni",
+    position: "Frontend Dev",
+    image: "public/team/anushka.jpg"
   },
   {
     id: 2,
-    name: "Ms Sienna Jolie",
-    position: "General Manager",
-    image: "https://picsum.photos/300/300?random=22"
+    name: "Ms Maria S",
+    position: "Frontend Dev",
+    image: "public/team/maria.jpg"
   },
   {
     id: 3,
-    name: "Ms John Blacksmith",
-    position: "Assistant Manager",
-    image: "https://picsum.photos/300/300?random=23"
-  },
-  {
-    id: 4,
-    name: "Mrs Lora Inn",
-    position: "Staff",
-    image: "https://picsum.photos/300/300?random=24"
-  },
-  {
-    id: 5,
-    name: "Ms John Blacksmith",
-    position: "Assistant Manager",
-    image: "https://picsum.photos/300/300?random=25"
-  },
-  {
-    id: 6,
-    name: "Mrs Lora Inn",
-    position: "Staff",
-    image: "https://picsum.photos/300/300?random=26"
+    name: "Mr Akshay S Gupta",
+    position: "Frontend Dev",
+    image: "public/team/akshay.jpg"
   }
 ];
 
