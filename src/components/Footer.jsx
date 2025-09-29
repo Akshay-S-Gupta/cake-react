@@ -21,7 +21,7 @@ const Footer = () => (
             <p>831-585-4398</p>
             <p>
               <span style={{ fontWeight: 500, color: "#222" }}>
-                contact@yourcompany.com
+                contact@cakestore.com
               </span>
             </p>
           </div>
@@ -33,17 +33,14 @@ const Footer = () => (
             <Link to="/" className="footer-link">
               Home
             </Link>
+            <Link to="/shop" className="footer-link">
+              Shop
+            </Link>
             <Link to="/about" className="footer-link">
               About us
             </Link>
             <Link to="/team" className="footer-link">
               Team
-            </Link>
-            <Link to="/blogs" className="footer-link">
-              Blogs
-            </Link>
-            <Link to="/contact" className="footer-link">
-              Contact us
             </Link>
           </div>
         </div>
@@ -78,8 +75,8 @@ const Footer = () => (
       <div className="footer-bottom row justify-content-between align-items-center">
         <div className="col-md-6">
           <p className="footer-credit">
-            © 2024 Cake Store HTML Template by{" "}
-            <span style={{ color: "#111" }}>TemplatesJungle</span>
+            © 2024 Cake Store HTML Developed by{" "}
+            <span style={{ color: "#111" }}>Cake Store</span>
           </p>
         </div>
         <div className="col-md-6 d-flex align-items-center justify-content-end">
