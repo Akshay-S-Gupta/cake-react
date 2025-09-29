@@ -117,7 +117,7 @@ const Home = () => {
           <div className="row align-items-center">
             <div className="col-lg-6">
               <img
-                src="public/highlight-1.jpg"
+                src="/highlight-1.jpg"
                 alt="Our Products"
                 className="img-fluid rounded mb-4"
               />
@@ -134,7 +134,7 @@ const Home = () => {
               </Link>
               <div className="mt-4">
                 <img
-                  src="public/highlight-2.jpg"
+                  src="/highlight-2.jpg"
                   alt="Mini Donuts"
                   className="img-fluid rounded"
                   style={{ maxWidth: "300px" }}
@@ -163,7 +163,7 @@ const Home = () => {
             </div>
             <div className="col-lg-6">
               <img
-                src="public/Our_Recipies/postimg1.jpg"
+                src="Our_Recipies/postimg1.jpg"
                 alt="Quality Dessert"
                 className="img-fluid rounded"
               />

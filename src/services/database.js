@@ -369,19 +369,19 @@ export const teamMembers = [
     id: 1,
     name: "Ms Anushka Kulkarni",
     position: "Frontend Dev",
-    image: "public/team/anushka.jpg"
+    image: "team/Anushka.jpg"
   },
   {
     id: 2,
     name: "Ms Maria S",
     position: "Frontend Dev",
-    image: "public/team/Maria.jpg"
+    image: "team/Maria.jpg"
   },
   {
     id: 3,
     name: "Mr Akshay S Gupta",
     position: "Frontend Dev",
-    image: "public/team/akshay.jpg"
+    image: "team/Akshay.jpg"
   }
 ];
 
