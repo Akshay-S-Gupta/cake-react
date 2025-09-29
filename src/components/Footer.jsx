@@ -84,19 +84,19 @@ const Footer = () => {
                 <p className="footer-text mb-2">We Accept:</p>
                 <div className="d-flex align-items-center">
                   <img
-                    src="public/Icons/visa.png"
+                    src="Icons/visa.png"
                     alt="Visa"
                     className="me-2"
                     style={{ height: "20px" }}
                   />
                   <img
-                    src="public/Icons/american-express.png"
+                    src="Icons/american-express.png"
                     alt="American Express"
                     className="me-2"
                     style={{ height: "20px" }}
                   />
                   <img
-                    src="public/Icons/master-card.png"
+                    src="Icons/master-card.png"
                     alt="MasterCard"
                     className="me-2"
                     style={{ height: "20px" }}

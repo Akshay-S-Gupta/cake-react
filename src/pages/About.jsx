@@ -108,7 +108,7 @@ const About = () => {
             <div className="col-lg-6">
               <div className="position-relative">
                 <img
-                  src="public/highlight-3.jpg"
+                  src="highlight-3.jpg"
                   alt="Bakery Interior"
                   className="img-fluid rounded shadow"
                   style={{ transform: "rotate(-2deg)" }}
@@ -122,7 +122,7 @@ const About = () => {
             <div className="col-lg-6">
               <div className="row">
                 <img
-                  src="public/highlight-4.jpg"
+                  src="highlight-4.jpg"
                   alt="Pastries Display"
                   className="img-fluid rounded"
                 />
