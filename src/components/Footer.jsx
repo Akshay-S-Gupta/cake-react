@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -29,12 +29,24 @@ const Footer = () => {
           <div className="col-lg-3 col-md-6 mb-4">
             <h5 className="footer-title">Links</h5>
             <div>
-              <Link to="/" className="footer-link">Home</Link>
-              <Link to="/about" className="footer-link">About us</Link>
-              <Link to="/team" className="footer-link">Team</Link>
-              <Link to="/signin" className="footer-link">Sign In</Link>
-              <Link to="/signup" className="footer-link">Sign Up</Link>
-              <Link to="/contact" className="footer-link">Contact us</Link>
+              <Link to="/" className="footer-link">
+                Home
+              </Link>
+              <Link to="/about" className="footer-link">
+                About us
+              </Link>
+              <Link to="/team" className="footer-link">
+                Team
+              </Link>
+              <Link to="/signin" className="footer-link">
+                Sign In
+              </Link>
+              <Link to="/signup" className="footer-link">
+                Sign Up
+              </Link>
+              <Link to="/contact" className="footer-link">
+                Contact us
+              </Link>
             </div>
           </div>
 
@@ -58,15 +70,6 @@ const Footer = () => {
                 <i className="fab fa-youtube"></i>
               </a>
             </div>
-            <div className="mt-3">
-              <p className="footer-text mb-2">We Accept:</p>
-              <div className="d-flex align-items-center">
-                <img src="https://via.placeholder.com/60x40/1A1F71/FFFFFF?text=VISA" alt="Visa" className="me-2" style={{height: '20px'}} />
-                <img src="https://via.placeholder.com/60x40/006FCF/FFFFFF?text=AMEX" alt="American Express" className="me-2" style={{height: '20px'}} />
-                <img src="https://via.placeholder.com/60x40/EB001B/FFFFFF?text=MC" alt="MasterCard" className="me-2" style={{height: '20px'}} />
-                <img src="https://via.placeholder.com/60x40/FF6000/FFFFFF?text=DISC" alt="Discover" className="me-2" style={{height: '20px'}} />
-              </div>
-            </div>
           </div>
         </div>
 
@@ -77,9 +80,29 @@ const Footer = () => {
               <p className="mb-0 text-muted">
                 © 2024 Cake Store HTML Template by TemplatesJungle
               </p>
-            </div>
-            <div className="col-md-6 text-md-end">
-              <p className="mb-0 text-muted">We Accept</p>
+              <div className="mt-3">
+                <p className="footer-text mb-2">We Accept:</p>
+                <div className="d-flex align-items-center">
+                  <img
+                    src="public/Icons/visa.png"
+                    alt="Visa"
+                    className="me-2"
+                    style={{ height: "20px" }}
+                  />
+                  <img
+                    src="public/Icons/american-express.png"
+                    alt="American Express"
+                    className="me-2"
+                    style={{ height: "20px" }}
+                  />
+                  <img
+                    src="public/Icons/master-card.png"
+                    alt="MasterCard"
+                    className="me-2"
+                    style={{ height: "20px" }}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
