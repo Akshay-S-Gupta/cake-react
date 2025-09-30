@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": "ce34",
+      "firstName": "Anushka",
+      "lastName": "Kulkarni",
+      "email": "anu@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "phone": "9999999999",
+      "address": {
+        "street": "madhukunj",
+        "city": "satara",
+        "state": "MH",
+        "zipCode": "12345"
+      }
+    },
+    {
+      "id": "e2b2",
+      "firstName": "maria",
+      "lastName": "sr",
+      "email": "mn@gmail.com",
+      "password": "125678",
+      "confirmPassword": "125678",
+      "phone": "2345678910",
+      "address": {
+        "street": "abcsd",
+        "city": "Bengluru",
+        "state": "MH",
+        "zipCode": "12345"
+      }
+    },
+    {
+      "id": "6fef",
+      "firstName": "akshay",
+      "lastName": "gupta",
+      "email": "ag@gmail.com",
+      "password": "098765",
+      "confirmPassword": "098765",
+      "phone": "6666666666",
+      "address": {
+        "street": "mnbvc",
+        "city": "bengluru",
+        "state": "KA",
+        "zipCode": "09876"
+      }
+    },
+    {
+      "id": "9ccf",
+      "firstName": "anushka",
+      "lastName": "kulkarni",
+      "email": "anu@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "phone": "9999999999",
+      "address": {
+        "street": "madhukunj",
+        "city": "satara",
+        "state": "MH",
+        "zipCode": "12345"
+      }
+    }
+  ]
+}
