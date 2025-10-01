@@ -19,13 +19,13 @@ const Header = () => {
                   <>
                     <Link
                       to="/signin"
-                      className="btn btn-outline-danger btn-sm me-2"
+                      className="btn btn-outline-primary btn-sm me-2"
                     >
                       Sign In
                     </Link>
                     <Link
                       to="/signup"
-                      className="btn btn-outline-danger btn-sm me-3"
+                      className="btn btn-outline-primary btn-sm me-3"
                     >
                       Sign Up
                     </Link>
@@ -36,7 +36,7 @@ const Header = () => {
                       Welcome, {user?.firstName}!
                     </span>
                     <button
-                      className="btn btn-outline-secondary btn-sm"
+                      className="btn btn-outline-danger btn-sm"
                       onClick={logout}
                     >
                       Logout
