@@ -17,7 +17,6 @@ const Checkout = () => {
     state: user?.address?.state || "Karnataka",
     zipCode: user?.address?.zipCode || "",
     phone: user?.phone || "",
-    email: user?.email || "",
     orderNotes: "",
     paymentMethod: "paypal",
   });
@@ -212,18 +211,6 @@ const Checkout = () => {
                         />
                       </div>
                     </div>
-
-                    <div className="mb-3">
-                      <label className="form-label">Email address *</label>
-                      <input
-                        type="email"
-                        className="form-control"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
@@ -252,65 +239,12 @@ const Checkout = () => {
                 </div>
 
                 <div className="card">
-                  <div className="card-header">
-                    <h5 className="mb-0">Payment Methods</h5>
-                  </div>
-                  <div className="card-body">
-                    <div className="mb-3">
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="paymentMethod"
-                          value="paypal"
-                          checked={formData.paymentMethod === "paypal"}
-                          onChange={handleInputChange}
-                        />
-                        <label className="form-check-label">
-                          <strong>PAYPAL</strong>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div className="mb-3">
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="paymentMethod"
-                          value="upi"
-                          checked={formData.paymentMethod === "upi"}
-                          onChange={handleInputChange}
-                        />
-                        <label className="form-check-label">
-                          <strong>UPI PAYMENT</strong>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div className="mb-4">
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="paymentMethod"
-                          value="google-pay"
-                          checked={formData.paymentMethod === "google-pay"}
-                          onChange={handleInputChange}
-                        />
-                        <label className="form-check-label">
-                          <strong>GOOGLE PAY</strong>
-                        </label>
-                      </div>
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="btn btn-primary-custom w-100"
-                    >
-                      PLACE AN ORDER
-                    </button>
-                  </div>
+                  <button
+                    type="submit"
+                    className="btn btn-primary-custom w-100"
+                  >
+                    PLACE AN ORDER
+                  </button>
                 </div>
               </div>
             </div>

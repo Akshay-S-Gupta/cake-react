@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { products, categories } from '../services/database';
-import { useCart } from '../context/CartContext';
-import Newsletter from '../components/Newsletter';
-import './css/Shop.css';
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { products, categories } from "../services/database";
+import { useCart } from "../context/CartContext";
+import Newsletter from "../components/Newsletter";
+import "./css/Shop.css";
 
 const Shop = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [sortBy, setSortBy] = useState('default');
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [sortBy, setSortBy] = useState("default");
   const { addToCart, isInCart } = useCart();
 
-  const filteredProducts = products.filter(product => 
-    selectedCategory === 'All' || product.category === selectedCategory
+  const filteredProducts = products.filter(
+    (product) =>
+      selectedCategory === "All" || product.category === selectedCategory
   );
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
     switch (sortBy) {
-      case 'price-low':
+      case "price-low":
         return a.price - b.price;
-      case 'price-high':
+      case "price-high":
         return b.price - a.price;
-      case 'name':
+      case "name":
         return a.name.localeCompare(b.name);
       default:
         return 0;
@@ -42,7 +42,9 @@ const Shop = () => {
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb justify-content-center">
                 <li className="breadcrumb-item">
-                  <a href="/" className="text-white text-decoration-none">Home</a>
+                  <a href="/" className="text-white text-decoration-none">
+                    Home
+                  </a>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
                   Shop
@@ -65,9 +67,9 @@ const Shop = () => {
             </div>
             <div className="col-md-6">
               <div className="d-flex justify-content-md-end">
-                <select 
-                  className="form-select" 
-                  style={{maxWidth: '200px'}}
+                <select
+                  className="form-select"
+                  style={{ maxWidth: "225px" }}
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
                 >
@@ -84,10 +86,14 @@ const Shop = () => {
           <div className="row mb-4">
             <div className="col-12">
               <div className="d-flex flex-wrap gap-2">
-                {categories.map(category => (
+                {categories.map((category) => (
                   <button
                     key={category}
-                    className={`btn ${selectedCategory === category ? 'btn-danger' : 'btn-outline-danger'}`}
+                    className={`btn ${
+                      selectedCategory === category
+                        ? "btn-primary"
+                        : "btn-outline-primary"
+                    }`}
                     onClick={() => setSelectedCategory(category)}
                   >
                     {category}
@@ -101,60 +107,77 @@ const Shop = () => {
           <div className="row">
             {sortedProducts.map((product) => (
               <div key={product.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
-       <div className="card product-card h-100">
-            <div className="product-image-wrapper position-relative">
-              <img
-                src={product.mainImage}
-                className="card-img-top product-image"
-                alt={product.name}
-              />
-              {/* Floating cart/tick icon */}
-              <button
-                className={`cart-icon-btn${isInCart(product.id) ? ' added' : ''}`}
-                type="button"
-                onClick={() => addToCart(product)}
-                aria-label={isInCart(product.id) ? "Added to cart" : "Add to cart"}
-              >
-                <img
-                  src={isInCart(product.id)
-                    ? '/images/tick.png'
-                    : '/images/cart.png'}
-                  alt={isInCart(product.id) ? "Added to cart" : "Add to cart"}
-                  className="cart-icon-img"
-                />
-              </button>
-            </div>
-            <div className="card-body text-center d-flex flex-column">
-              <div className="product-info">
-                <h5 className="card-title product-title">{product.name}</h5>
-                <p className="card-text product-price">
-                  {product.originalPrice && (
-                    <span className="original-price">${product.originalPrice.toFixed(2)}</span>
-                  )}
-                  ${product.price.toFixed(2)}
-                </p>
-                <div className="d-flex justify-content-center mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <i
-                      key={i}
-                      className={`fas fa-star ${i < Math.floor(product.rating) ? 'text-warning' : 'text-muted'}`}
-                    ></i>
-                  ))}
-                  <span className="ms-2 text-muted">({product.rating})</span>
+                <div className="card product-card h-100">
+                  <div className="product-image-wrapper position-relative">
+                    <img
+                      src={product.mainImage}
+                      className="card-img-top product-image"
+                      alt={product.name}
+                    />
+                    {/* Floating cart/tick icon */}
+                    <button
+                      className={`cart-icon-btn${
+                        isInCart(product.id) ? " added" : ""
+                      }`}
+                      type="button"
+                      onClick={() => addToCart(product)}
+                      aria-label={
+                        isInCart(product.id) ? "Added to cart" : "Add to cart"
+                      }
+                    >
+                      <img
+                        src={
+                          isInCart(product.id)
+                            ? "/images/tick.png"
+                            : "/images/cart.png"
+                        }
+                        alt={
+                          isInCart(product.id) ? "Added to cart" : "Add to cart"
+                        }
+                        className="cart-icon-img"
+                      />
+                    </button>
+                  </div>
+                  <div className="card-body text-center d-flex flex-column">
+                    <div className="product-info">
+                      <h5 className="card-title product-title">
+                        {product.name}
+                      </h5>
+                      <p className="card-text product-price">
+                        {product.originalPrice && (
+                          <span className="original-price">
+                            ${product.originalPrice.toFixed(2)}
+                          </span>
+                        )}
+                        ${product.price.toFixed(2)}
+                      </p>
+                      <div className="d-flex justify-content-center mb-3">
+                        {[...Array(5)].map((_, i) => (
+                          <i
+                            key={i}
+                            className={`fas fa-star ${
+                              i < Math.floor(product.rating)
+                                ? "text-warning"
+                                : "text-muted"
+                            }`}
+                          ></i>
+                        ))}
+                        <span className="ms-2 text-muted">
+                          ({product.rating})
+                        </span>
+                      </div>
+                    </div>
+                    <div className="d-flex gap-2 justify-content-center">
+                      <Link
+                        to={`/product/${product.id}`}
+                        className="btn btn-outline-primary btn-sm flex-fill"
+                      >
+                        View Details
+                      </Link>
+                      {/* Cart/tick button REMOVED from here */}
+                    </div>
+                  </div>
                 </div>
-              </div>
-          <div className="d-flex gap-2 justify-content-center">
-                <Link 
-                  to={`/product/${product.id}`} 
-                  className="btn btn-outline-danger btn-sm flex-fill"
-                >
-                  View Details
-                </Link>
-                {/* Cart/tick button REMOVED from here */}
-              </div>
-            </div>
-          </div>
-
               </div>
             ))}
           </div>
@@ -170,13 +193,19 @@ const Shop = () => {
                     </a>
                   </li>
                   <li className="page-item active">
-                    <a className="page-link" href="#">1</a>
+                    <a className="page-link" href="#">
+                      1
+                    </a>
                   </li>
                   <li className="page-item">
-                    <a className="page-link" href="#">2</a>
+                    <a className="page-link" href="#">
+                      2
+                    </a>
                   </li>
                   <li className="page-item">
-                    <a className="page-link" href="#">3</a>
+                    <a className="page-link" href="#">
+                      3
+                    </a>
                   </li>
                   <li className="page-item">
                     <a className="page-link" href="#" aria-label="Next">
