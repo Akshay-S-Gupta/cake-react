@@ -14,12 +14,11 @@ const PaymentGateway = () => {
     setSelectedPayment(paymentMethod);
     
     // Simulate payment processing
-    setTimeout(() => {
+       setTimeout(() => {
       setIsProcessing(false);
-      alert(`Payment successful via ${paymentMethod}! Your order has been placed.`);
       clearCart();
-      navigate('/');
-    }, 2000);
+      navigate('/payment-success'); // << Go to animated success page
+    }, 3500);
   };
 
   if (items.length === 0) {

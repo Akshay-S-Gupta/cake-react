@@ -15,6 +15,7 @@ import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import ForgotPassword from './pages/ForgotPassword';
 import PaymentGateway from './pages/PaymentGateway';
+import PaymentSuccess from './pages/PaymentSuccess';
 import ScrollToTop from './components/ScrollToTop';
 
 import './App.css';
@@ -40,6 +41,7 @@ function App() {
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path="/payment" element={<PaymentGateway />} />
+                 <Route path="/payment-success" element={<PaymentSuccess />} /> 
               </Routes>
             </main>
             <Footer />
