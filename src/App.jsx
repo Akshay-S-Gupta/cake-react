@@ -15,11 +15,14 @@ import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import ForgotPassword from './pages/ForgotPassword';
 import PaymentGateway from './pages/PaymentGateway';
+import ScrollToTop from './components/ScrollToTop';
+
 import './App.css';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <UserProvider>
         <CartProvider>
           <div className="App">
