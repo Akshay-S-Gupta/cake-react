@@ -59,6 +59,21 @@
         "state": "MH",
         "zipCode": "12345"
       }
+    },
+    {
+      "id": "485b",
+      "firstName": "Abc",
+      "lastName": "Xyz",
+      "email": "abc@gmail.com",
+      "password": "asdfgh",
+      "confirmPassword": "asdfgh",
+      "phone": "9876543210",
+      "address": {
+        "street": "90, new street,",
+        "city": "Trichy",
+        "state": "TN",
+        "zipCode": "12345"
+      }
     }
   ]
 }
