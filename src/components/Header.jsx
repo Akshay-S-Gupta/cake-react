@@ -36,7 +36,7 @@ const Header = () => {
                       Welcome, {user?.firstName}!
                     </span>
                     <button
-                      className="btn btn-outline-secondary btn-sm"
+                      className="btn btn-outline-danger btn-sm"
                       onClick={logout}
                     >
                       Logout

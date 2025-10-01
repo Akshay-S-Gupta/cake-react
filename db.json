@@ -89,6 +89,21 @@
         "state": "MH",
         "zipCode": "12345"
       }
+    },
+    {
+      "id": "c0d6",
+      "firstName": "xyz",
+      "lastName": "xyz",
+      "email": "xyz@deloitte.com",
+      "password": "xyzabc",
+      "confirmPassword": "xyzabc",
+      "phone": "9999999999",
+      "address": {
+        "street": "xyz",
+        "city": "xyz",
+        "state": "KA",
+        "zipCode": "56000"
+      }
     }
   ]
 }
