@@ -91,19 +91,22 @@
       }
     },
     {
-      "id": "c0d6",
-      "firstName": "xyz",
-      "lastName": "xyz",
-      "email": "xyz@deloitte.com",
-      "password": "xyzabc",
-      "confirmPassword": "xyzabc",
-      "phone": "9999999999",
-      "address": {
-        "street": "xyz",
-        "city": "xyz",
-        "state": "KA",
-        "zipCode": "56000"
-      }
+      "id": "7aaf",
+      "firstName": "anushka",
+      "lastName": "kulkarni",
+      "email": "asd@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "phone": "1234567890"
+    },
+    {
+      "id": "1071",
+      "firstName": "Anushka",
+      "lastName": "Kulkarni",
+      "email": "anushka.u.kulkarni07@gmail.com",
+      "password": "098765",
+      "confirmPassword": "098765",
+      "phone": "7788996655"
     }
   ]
 }
