@@ -64,11 +64,6 @@ const Footer = () => (
               <i className="fab fa-instagram"></i>
             </a>
           </div>
-          <div className="footer-social-row">
-            <a href="#" className="footer-link social">
-              <i className="fab fa-instagram"></i>
-            </a>
-          </div>
         </div>
       </div>
       {/* Bottom Bar */}
