@@ -128,8 +128,8 @@ const Shop = () => {
                       <img
                         src={
                           isInCart(product.id)
-                            ? "/images/tick.png"
-                            : "/images/cart.png"
+                            ? "/Icons/tick.png"
+                            : "/Icons/cart.png"
                         }
                         alt={
                           isInCart(product.id) ? "Added to cart" : "Add to cart"

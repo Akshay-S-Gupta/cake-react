@@ -59,11 +59,11 @@ const ProductDetail = () => {
               </li>
               <li className="breadcrumb-item">
                 <Link to="/shop" className="text-decoration-none">
-                  Pages
+                  Shop
                 </Link>
               </li>
               <li className="breadcrumb-item " aria-current="page">
-                Shop
+                {product.name}
               </li>
             </ol>
           </nav>

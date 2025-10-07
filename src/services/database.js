@@ -10,13 +10,13 @@ export const products = [
     category: "Donuts",
     description: "Delicious donuts with colorful sprinkles, perfect for any occasion. Made with fresh ingredients and topped with premium sprinkles.",
     images: [
-      "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
+      "/images/donuts/img1.jpg",
+      "/images/donuts/img2.jpg",
+      "/images/donuts/img3.jpg",
+      "/images/donuts/img4.jpg",
+      "/images/donuts/img5.jpg"
     ],
-    mainImage: "/images/cake1.jpg",
+    mainImage: "/images/donuts/img1.jpg",
     additionalInfo: "These donuts are made fresh daily with premium ingredients. Perfect for breakfast, dessert, or any special occasion.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: [
@@ -44,20 +44,20 @@ export const products = [
     category: "Pastries",
     description: "Rich chocolate pastry with layers of cream and fresh berries.",
     images: [
-      "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
+      "/images/pastries/Black_Forest_Pastry/img1.jpg",
+      "/images/pastries/Black_Forest_Pastry/img2.jpg",
+      "/images/pastries/Black_Forest_Pastry/img3.jpg",
+      "/images/pastries/Black_Forest_Pastry/img4.jpg",
+      "/images/pastries/Black_Forest_Pastry/img5.jpg"
     ],
-    mainImage: "/images/cake2.jpg",
+    mainImage: "/images/pastries/Black_Forest_Pastry/img1.jpg",
     additionalInfo: "Made with premium Belgian chocolate and fresh seasonal berries.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
   },
   {
-    id: 4,
-    name: "Beautiful Wedding Cake",
+    id: 3,
+    name: "Wedding Cake",
     price: 15.00,
     originalPrice: null,
     rating: 4.9,
@@ -65,19 +65,19 @@ export const products = [
     category: "Cakes",
     description: "Elegant wedding cake perfect for special occasions.",
     images: [
-      "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
+      "/images/cakes/Wedding_Cake/img1.jpg",
+      "/images/cakes/Wedding_Cake/img2.jpg",
+      "/images/cakes/Wedding_Cake/img3.jpg",
+      "/images/cakes/Wedding_Cake/img4.jpg",
+      "/images/cakes/Wedding_Cake/img5.jpg"
     ],
-    mainImage: "/images/cake3.jpg",
+    mainImage: "/images/cakes/Wedding_Cake/img1.jpg",
     additionalInfo: "Custom wedding cakes available upon request.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
   },
   {
-    id: 7,
+    id: 4,
     name: "Red Velvet Cake",
     price: 25.00,
     originalPrice: 30.00,
@@ -86,19 +86,19 @@ export const products = [
     category: "Cakes",
     description: "Classic red velvet cake with cream cheese frosting.",
     images: [
-     "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
+     "/images/cakes/Red_Velvet_Cake/img1.jpg",
+      "/images/cakes/Red_Velvet_Cake/img2.jpg",
+      "/images/cakes/Red_Velvet_Cake/img3.jpg",
+      "/images/cakes/Red_Velvet_Cake/img4.jpg",
+      "/images/cakes/Red_Velvet_Cake/img5.jpg"
     ],
-    mainImage: "/images/cake2.jpg",
+    mainImage: "/images/cakes/Red_Velvet_Cake/img1.jpg",
     additionalInfo: "Traditional red velvet cake perfect for special occasions.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
   },
   {
-    id: 8,
+    id: 5,
     name: "Strawberry Tart",
     price: 12.00,
     originalPrice: null,
@@ -119,7 +119,7 @@ export const products = [
     reviews: []
   },
   {
-    id: 9,
+    id: 6,
     name: "Vanilla Cupcake",
     price: 6.00,
     originalPrice: null,
@@ -140,7 +140,7 @@ export const products = [
     reviews: []
   },
   {
-    id: 10,
+    id: 7,
     name: "Chocolate Eclair",
     price: 9.00,
     originalPrice: null,
@@ -161,7 +161,7 @@ export const products = [
     reviews: []
   },
   {
-    id: 11,
+    id: 8,
     name: "Lemon Meringue Pie",
     price: 18.00,
     originalPrice: null,
@@ -182,7 +182,7 @@ export const products = [
     reviews: []
   },
   {
-    id: 13,
+    id: 9,
     name: "Cinnamon Roll",
     price: 7.00,
     originalPrice: null,
@@ -203,7 +203,7 @@ export const products = [
     reviews: []
   },
   {
-    id: 14,
+    id: 10,
     name: "Tiramisu",
     price: 16.00,
     originalPrice: null,
@@ -224,7 +224,7 @@ export const products = [
     reviews: []
   },
   {
-    id: 15,
+    id: 11,
     name: "Cheesecake Slice",
     price: 11.00,
     originalPrice: null,
@@ -245,7 +245,7 @@ export const products = [
     reviews: []
   },
   {
-    id: 16,
+    id: 12,
     name: "Fruit Tart",
     price: 13.00,
     originalPrice: null,
