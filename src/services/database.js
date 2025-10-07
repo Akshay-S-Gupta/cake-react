@@ -107,13 +107,13 @@ export const products = [
     category: "Pastries",
     description: "Delicate tart with fresh strawberries and vanilla cream.",
     images: [
-     "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
+     "/images/pastries/Strawberry_Tart/img1.jpg",
+      "/images/pastries/Strawberry_Tart/img2.jpg",
+      "/images/pastries/Strawberry_Tart/img3.jpg",
+      "/images/pastries/Strawberry_Tart/img4.jpg",
+      "/images/pastries/Strawberry_Tart/img5.jpg"
     ],
-    mainImage: "/images/cake1.jpg",
+    mainImage: "/images/pastries/Strawberry_Tart/img1.jpg",
     additionalInfo: "Made with seasonal fresh strawberries.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
@@ -128,40 +128,19 @@ export const products = [
     category: "Cakes",
     description: "Classic vanilla cupcake with buttercream frosting.",
     images: [
-      "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
+      "/images/cakes/Vanilla_Cupcake/img1.jpg",
+      "/images/cakes/Vanilla_Cupcake/img2.jpg",
+      "/images/cakes/Vanilla_Cupcake/img3.jpg",
+      "/images/cakes/Vanilla_Cupcake/img4.jpg",
+      "/images/cakes/Vanilla_Cupcake/img5.jpg"
     ],
-    mainImage: "/images/cake3.jpg",
+    mainImage: "/images/cakes/Vanilla_Cupcake/img1.jpg",
     additionalInfo: "Simple and delicious vanilla cupcake.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
   },
   {
     id: 7,
-    name: "Chocolate Eclair",
-    price: 9.00,
-    originalPrice: null,
-    rating: 4.5,
-    stock: 20,
-    category: "Pastries",
-    description: "French-style chocolate eclair with rich cream filling.",
-    images: [
-      "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
-    ],
-    mainImage: "/images/cake2.jpg",
-    additionalInfo: "Authentic French pastry with chocolate glaze.",
-    shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
-    reviews: []
-  },
-  {
-    id: 8,
     name: "Lemon Meringue Pie",
     price: 18.00,
     originalPrice: null,
@@ -170,40 +149,40 @@ export const products = [
     category: "Pies",
     description: "Tangy lemon filling with fluffy meringue topping.",
     images: [
-     "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
+     "/images/pies/img1.jpg",
+      "/images/pies/img2.jpg",
+      "/images/pies/img3.jpg",
+      "/images/pies/img4.jpg",
+      "/images/pies/img5.jpg"
     ],
-    mainImage: "/images/cake1.jpg",
+    mainImage: "/images/pies/img1.jpg",
     additionalInfo: "Perfect balance of sweet and tart flavors.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
   },
   {
-    id: 9,
+    id: 8,
     name: "Cinnamon Roll",
     price: 7.00,
     originalPrice: null,
     rating: 4.4,
     stock: 22,
-    category: "Pastries",
+    category: "Desserts",
     description: "Warm cinnamon roll with cream cheese glaze.",
     images: [
-     "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
+     "/images/desserts/Cinnamon_Roll/img1.jpg",
+      "/images/desserts/Cinnamon_Roll/img2.jpg",
+      "/images/desserts/Cinnamon_Roll/img3.jpg",
+      "/images/desserts/Cinnamon_Roll/img4.jpg",
+      "/images/desserts/Cinnamon_Roll/img5.jpg"
     ],
-    mainImage: "/images/cake4.jpg",
+    mainImage: "/images/desserts/Cinnamon_Roll/img1.jpg",
     additionalInfo: "Freshly baked with aromatic cinnamon.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
   },
   {
-    id: 10,
+    id: 9,
     name: "Tiramisu",
     price: 16.00,
     originalPrice: null,
@@ -212,20 +191,20 @@ export const products = [
     category: "Desserts",
     description: "Classic Italian tiramisu with coffee and mascarpone.",
     images: [
-     "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
+     "/images/desserts/Tiramisu/img1.jpg",
+      "/images/desserts/Tiramisu/img2.jpg",
+      "/images/desserts/Tiramisu/img3.jpg",
+      "/images/desserts/Tiramisu/img4.jpg",
+      "/images/desserts/Tiramisu/img5.jpg"
     ],
-    mainImage: "/images/cake3.jpg",
+    mainImage: "/images/desserts/Tiramisu/img1.jpg",
     additionalInfo: "Authentic Italian dessert with espresso.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
   },
   {
-    id: 11,
-    name: "Cheesecake Slice",
+    id: 10,
+    name: "Cheesecake",
     price: 11.00,
     originalPrice: null,
     rating: 4.6,
@@ -233,19 +212,19 @@ export const products = [
     category: "Cakes",
     description: "Rich New York style cheesecake with graham cracker crust.",
     images: [
-     "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
+     "/images/cakes/Cheesecake/img1.jpg",
+      "/images/cakes/Cheesecake/img2.jpg",
+      "/images/cakes/Cheesecake/img3.jpg",
+      "/images/cakes/Cheesecake/img4.jpg",
+      "/images/cakes/Cheesecake/img5.jpg"
     ],
-    mainImage: "/images/cake4.jpg",
+    mainImage: "/images/cakes/Cheesecake/img1.jpg",
     additionalInfo: "Creamy and dense cheesecake perfection.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
   },
   {
-    id: 12,
+    id: 11,
     name: "Fruit Tart",
     price: 13.00,
     originalPrice: null,
@@ -254,13 +233,13 @@ export const products = [
     category: "Pastries",
     description: "Mixed fruit tart with vanilla pastry cream.",
     images: [
-     "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
+     "/images/pastries/Fruit_Tart/img1.jpg",
+      "/images/pastries/Fruit_Tart/img2.jpg",
+      "/images/pastries/Fruit_Tart/img3.jpg",
+      "/images/pastries/Fruit_Tart/img4.jpg",
+      "/images/pastries/Fruit_Tart/img5.jpg"
     ],
-    mainImage: "/images/cake5.jpg",
+    mainImage: "/images/pastries/Fruit_Tart/img1.jpg",
     additionalInfo: "Fresh seasonal fruits on sweet pastry.",
     shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
     reviews: []
