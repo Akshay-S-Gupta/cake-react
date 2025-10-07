@@ -1,24 +1,26 @@
-import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { products } from '../services/database';
-import { useCart } from '../context/CartContext';
-import Newsletter from '../components/Newsletter';
+import React, { useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import { products } from "../services/database";
+import { useCart } from "../context/CartContext";
+import Newsletter from "../components/Newsletter";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
-  const [activeTab, setActiveTab] = useState('description');
+  const [activeTab, setActiveTab] = useState("description");
   const [selectedImage, setSelectedImage] = useState(0);
 
-  const product = products.find(p => p.id === parseInt(id));
+  const product = products.find((p) => p.id === parseInt(id));
 
   if (!product) {
     return (
       <div className="container py-5">
         <div className="text-center">
           <h2>Product not found</h2>
-          <Link to="/shop" className="btn btn-primary">Back to Shop</Link>
+          <Link to="/shop" className="btn btn-primary">
+            Back to Shop
+          </Link>
         </div>
       </div>
     );
@@ -46,17 +48,23 @@ const ProductDetail = () => {
   return (
     <div>
       {/* Breadcrumbs */}
-      <section className="py-3 bg-light">
+      <section className="py-3">
         <div className="container">
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb mb-0">
               <li className="breadcrumb-item">
-                <Link to="/" className="text-decoration-none">Home</Link>
+                <Link to="/" className="text-decoration-none">
+                  Home
+                </Link>
               </li>
               <li className="breadcrumb-item">
-                <Link to="/shop" className="text-decoration-none">Pages</Link>
+                <Link to="/shop" className="text-decoration-none">
+                  Pages
+                </Link>
               </li>
-              <li className="breadcrumb-item active" aria-current="page">Shop</li>
+              <li className="breadcrumb-item " aria-current="page">
+                Shop
+              </li>
             </ol>
           </nav>
         </div>
@@ -65,47 +73,48 @@ const ProductDetail = () => {
       {/* Product Detail */}
       <section className="py-5">
         <div className="container">
-          <div className="row">
-            {/* Product Images */}
-            <div className="col-lg-6">
-              <div className="row">
-                {/* Thumbnail Gallery */}
-                <div className="col-3">
-                  <div className="d-flex flex-column gap-2">
-                    {product.images.map((image, index) => (
-                      <img
-                        key={index}
-                        src={image}
-                        alt={`${product.name} ${index + 1}`}
-                        className={`img-fluid rounded cursor-pointer ${selectedImage === index ? 'border border-primary' : ''}`}
-                        style={{height: '80px', objectFit: 'cover'}}
-                        onClick={() => setSelectedImage(index)}
-                      />
-                    ))}
-                  </div>
-                </div>
-                {/* Main Image */}
-                <div className="col-9">
+          <div className="row ">
+            {/* Product Images Wrapper */}
+            <div className="col-lg-6 d-flex gallery-wrapper gap-2">
+              {/* Vertical Thumbnails */}
+              <div className="thumbnails-column">
+                {product.images.map((image, index) => (
                   <img
-                    src={product.images[selectedImage]}
-                    alt={product.name}
-                    className="img-fluid rounded"
+                    key={index}
+                    src={image}
+                    alt={`${product.name} ${index + 1}`}
+                    className={`thumbnail-img ${
+                      selectedImage === index ? "active" : ""
+                    }`}
+                    onClick={() => setSelectedImage(index)}
                   />
-                </div>
+                ))}
+              </div>
+              {/* Main Image Display */}
+              <div className="main-image-container flex-grow-1">
+                <img
+                  src={product.images[selectedImage]}
+                  alt={product.name}
+                  className="main-product-img"
+                />
               </div>
             </div>
 
             {/* Product Info */}
             <div className="col-lg-6">
               <h1 className="script-font h2 mb-3">{product.name}</h1>
-              
+
               {/* Rating */}
               <div className="d-flex align-items-center mb-3">
                 <div className="me-2">
                   {[...Array(5)].map((_, i) => (
-                    <i 
-                      key={i} 
-                      className={`fas fa-star ${i < Math.floor(product.rating) ? 'text-warning' : 'text-muted'}`}
+                    <i
+                      key={i}
+                      className={`fas fa-star ${
+                        i < Math.floor(product.rating)
+                          ? "text-warning"
+                          : "text-muted"
+                      }`}
                     ></i>
                   ))}
                 </div>
@@ -115,9 +124,13 @@ const ProductDetail = () => {
               {/* Price */}
               <div className="mb-3">
                 {product.originalPrice && (
-                  <span className="original-price me-2">${product.originalPrice.toFixed(2)}</span>
+                  <span className="original-price me-2">
+                    ${product.originalPrice.toFixed(2)}
+                  </span>
                 )}
-                <span className="product-price h4">${product.price.toFixed(2)}</span>
+                <span className="product-price h4">
+                  ${product.price.toFixed(2)}
+                </span>
               </div>
 
               {/* Description */}
@@ -130,9 +143,11 @@ const ProductDetail = () => {
 
               {/* Quantity Selector */}
               <div className="d-flex align-items-center mb-4">
-                <label className="me-3"><strong>Quantity:</strong></label>
+                <label className="me-3">
+                  <strong>Quantity:</strong>
+                </label>
                 <div className="d-flex align-items-center border rounded">
-                  <button 
+                  <button
                     className="btn btn-outline-secondary border-0"
                     onClick={decrementQuantity}
                     disabled={quantity <= 1}
@@ -143,12 +158,19 @@ const ProductDetail = () => {
                     type="number"
                     className="form-control text-center border-0"
                     value={quantity}
-                    onChange={(e) => setQuantity(Math.max(1, Math.min(product.stock, parseInt(e.target.value) || 1)))}
-                    style={{width: '60px'}}
+                    onChange={(e) =>
+                      setQuantity(
+                        Math.max(
+                          1,
+                          Math.min(product.stock, parseInt(e.target.value) || 1)
+                        )
+                      )
+                    }
+                    style={{ width: "60px" }}
                     min="1"
                     max={product.stock}
                   />
-                  <button 
+                  <button
                     className="btn btn-outline-secondary border-0"
                     onClick={incrementQuantity}
                     disabled={quantity >= product.stock}
@@ -160,7 +182,7 @@ const ProductDetail = () => {
 
               {/* Action Buttons */}
               <div className="d-flex gap-3 mb-4">
-                <button 
+                <button
                   className="btn btn-primary-custom"
                   onClick={handleAddToCart}
                 >
@@ -206,32 +228,40 @@ const ProductDetail = () => {
               <ul className="nav nav-tabs" role="tablist">
                 <li className="nav-item" role="presentation">
                   <button
-                    className={`nav-link ${activeTab === 'description' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('description')}
+                    className={`nav-link ${
+                      activeTab === "description" ? "active" : ""
+                    }`}
+                    onClick={() => setActiveTab("description")}
                   >
                     DESCRIPTION
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
                   <button
-                    className={`nav-link ${activeTab === 'additional' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('additional')}
+                    className={`nav-link ${
+                      activeTab === "additional" ? "active" : ""
+                    }`}
+                    onClick={() => setActiveTab("additional")}
                   >
                     ADDITIONAL INFORMATION
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
                   <button
-                    className={`nav-link ${activeTab === 'shipping' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('shipping')}
+                    className={`nav-link ${
+                      activeTab === "shipping" ? "active" : ""
+                    }`}
+                    onClick={() => setActiveTab("shipping")}
                   >
                     SHIPPING & RETURN
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
                   <button
-                    className={`nav-link ${activeTab === 'reviews' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('reviews')}
+                    className={`nav-link ${
+                      activeTab === "reviews" ? "active" : ""
+                    }`}
+                    onClick={() => setActiveTab("reviews")}
                   >
                     REVIEWS
                   </button>
@@ -239,7 +269,7 @@ const ProductDetail = () => {
               </ul>
 
               <div className="tab-content p-4 border border-top-0">
-                {activeTab === 'description' && (
+                {activeTab === "description" && (
                   <div>
                     <h4>Product Description</h4>
                     <p className="text-muted">{product.description}</p>
@@ -252,22 +282,28 @@ const ProductDetail = () => {
                   </div>
                 )}
 
-                {activeTab === 'additional' && (
+                {activeTab === "additional" && (
                   <div>
                     <h4>Additional Information</h4>
                     <p className="text-muted">{product.additionalInfo}</p>
                     <table className="table">
                       <tbody>
                         <tr>
-                          <td><strong>Weight</strong></td>
+                          <td>
+                            <strong>Weight</strong>
+                          </td>
                           <td>0.5 kg</td>
                         </tr>
                         <tr>
-                          <td><strong>Dimensions</strong></td>
+                          <td>
+                            <strong>Dimensions</strong>
+                          </td>
                           <td>10 x 10 x 5 cm</td>
                         </tr>
                         <tr>
-                          <td><strong>Ingredients</strong></td>
+                          <td>
+                            <strong>Ingredients</strong>
+                          </td>
                           <td>Flour, Sugar, Eggs, Butter, Vanilla</td>
                         </tr>
                       </tbody>
@@ -275,7 +311,7 @@ const ProductDetail = () => {
                   </div>
                 )}
 
-                {activeTab === 'shipping' && (
+                {activeTab === "shipping" && (
                   <div>
                     <h4>Shipping & Return Information</h4>
                     <p className="text-muted">{product.shippingInfo}</p>
@@ -288,19 +324,26 @@ const ProductDetail = () => {
                   </div>
                 )}
 
-                {activeTab === 'reviews' && (
+                {activeTab === "reviews" && (
                   <div>
                     <h4>Customer Reviews</h4>
                     {product.reviews.length > 0 ? (
-                      product.reviews.map(review => (
-                        <div key={review.id} className="border-bottom pb-3 mb-3">
+                      product.reviews.map((review) => (
+                        <div
+                          key={review.id}
+                          className="border-bottom pb-3 mb-3"
+                        >
                           <div className="d-flex align-items-center mb-2">
                             <strong className="me-3">{review.name}</strong>
                             <div>
                               {[...Array(5)].map((_, i) => (
-                                <i 
-                                  key={i} 
-                                  className={`fas fa-star ${i < review.rating ? 'text-warning' : 'text-muted'}`}
+                                <i
+                                  key={i}
+                                  className={`fas fa-star ${
+                                    i < review.rating
+                                      ? "text-warning"
+                                      : "text-muted"
+                                  }`}
                                 ></i>
                               ))}
                             </div>
@@ -309,7 +352,9 @@ const ProductDetail = () => {
                         </div>
                       ))
                     ) : (
-                      <p className="text-muted">No reviews yet. Be the first to review this product!</p>
+                      <p className="text-muted">
+                        No reviews yet. Be the first to review this product!
+                      </p>
                     )}
                   </div>
                 )}
@@ -320,29 +365,41 @@ const ProductDetail = () => {
           {/* Related Products */}
           <div className="row mt-5">
             <div className="col-12">
-              <h3 className="script-font h2 mb-4 text-center">RELATED PRODUCTS</h3>
+              <h3 className="script-font h2 mb-4 text-center">
+                RELATED PRODUCTS
+              </h3>
               <div className="row">
-                {products.filter(p => p.id !== product.id).slice(0, 4).map(relatedProduct => (
-                  <div key={relatedProduct.id} className="col-lg-3 col-md-6 mb-4">
-                    <div className="card product-card h-100">
-                      <img 
-                        src={relatedProduct.mainImage} 
-                        className="card-img-top product-image" 
-                        alt={relatedProduct.name}
-                      />
-                      <div className="card-body text-center">
-                        <h5 className="card-title product-title">{relatedProduct.name}</h5>
-                        <p className="card-text product-price">${relatedProduct.price.toFixed(2)}</p>
-                        <Link 
-                          to={`/product/${relatedProduct.id}`} 
-                          className="btn btn-outline-primary btn-sm"
-                        >
-                          View Details
-                        </Link>
+                {products
+                  .filter((p) => p.id !== product.id)
+                  .slice(0, 4)
+                  .map((relatedProduct) => (
+                    <div
+                      key={relatedProduct.id}
+                      className="col-lg-3 col-md-6 mb-4"
+                    >
+                      <div className="card product-card h-100">
+                        <img
+                          src={relatedProduct.mainImage}
+                          className="card-img-top product-image"
+                          alt={relatedProduct.name}
+                        />
+                        <div className="card-body text-center">
+                          <h5 className="card-title product-title">
+                            {relatedProduct.name}
+                          </h5>
+                          <p className="card-text product-price">
+                            ${relatedProduct.price.toFixed(2)}
+                          </p>
+                          <Link
+                            to={`/product/${relatedProduct.id}`}
+                            className="btn btn-outline-primary btn-sm"
+                          >
+                            View Details
+                          </Link>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
             </div>
           </div>

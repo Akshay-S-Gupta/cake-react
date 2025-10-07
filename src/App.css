@@ -101,18 +101,12 @@ body {
   margin: 0;
 }
 
-.breadcrumb-item {
-  color: #fff;
-}
-
-.breadcrumb-item.active {
-  color: #fff;
-  opacity: 0.8;
-}
-
 .breadcrumb-item + .breadcrumb-item::before {
-  color: #fff;
   content: ">";
+}
+
+.breadcrumb-item a {
+  color: black !important;
 }
 
 /* Button Styles */
@@ -211,7 +205,6 @@ body {
   flex: 1;
   padding: 15px 20px;
   border: none;
-  border-radius: 0;
   font-size: 1rem;
 }
 
@@ -222,7 +215,7 @@ body {
   padding: 15px 30px;
   font-weight: 600;
   text-transform: uppercase;
-  border-radius: 0;
+  border-radius: 8px;
   transition: background-color 0.3s ease;
 }
 
@@ -235,7 +228,7 @@ body {
   background-color: #fff;
   padding: 60px 0 0;
   border-top: none;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 .footer-main {
@@ -398,7 +391,7 @@ body {
 .home-product-card {
   background: #fff;
   border-radius: 1.25rem;
-  box-shadow: 0 2px 12px rgba(20,40,60,0.08);
+  box-shadow: 0 2px 12px rgba(20, 40, 60, 0.08);
   overflow: hidden;
   transition: box-shadow 0.15s;
   display: flex;
@@ -407,7 +400,7 @@ body {
 }
 
 .home-product-card:hover {
-  box-shadow: 0 4px 22px rgba(20,40,60,0.16);
+  box-shadow: 0 4px 22px rgba(20, 40, 60, 0.16);
 }
 
 .home-product-image {
@@ -419,7 +412,7 @@ body {
 }
 
 .home-card-title {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 1.15rem;
 }
 
@@ -441,6 +434,36 @@ body {
   color: #fff;
 }
 
+.thumbnails-column {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.thumbnail-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.thumbnail-img.active {
+  border-color: #007bff;
+}
+
+.main-image-container {
+  align-items: center;
+  justify-content: center;
+}
+
+.main-product-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
 
 @media (max-width: 991.98px) {
   .col-lg-3.home-grid-col {

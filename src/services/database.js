@@ -56,49 +56,7 @@ export const products = [
     reviews: []
   },
   {
-    id: 3,
-    name: "Black Forest Cupcake",
-    price: 12.00,
-    originalPrice: null,
-    rating: 4.2,
-    stock: 12,
-    category: "Cupcakes",
-    description: "Delicious cupcake with chocolate frosting and fresh raspberry.",
-    images: [
-      "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
-    ],
-    mainImage: "/images/cake4.jpg",
-    additionalInfo: "Handcrafted cupcakes with premium ingredients.",
-    shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
-    reviews: []
-  },
-  {
     id: 4,
-    name: "Macarons with Berries",
-    price: 12.00,
-    originalPrice: null,
-    rating: 4.8,
-    stock: 15,
-    category: "Macarons",
-    description: "Delicate macarons with fresh berry filling.",
-    images: [
-      "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
-    ],
-    mainImage: "/images/cake5.jpg",
-    additionalInfo: "French-style macarons with seasonal berry filling.",
-    shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
-    reviews: []
-  },
-  {
-    id: 5,
     name: "Beautiful Wedding Cake",
     price: 15.00,
     originalPrice: null,
@@ -119,49 +77,7 @@ export const products = [
     reviews: []
   },
   {
-    id: 6,
-    name: "Coffee Cup",
-    price: 8.00,
-    originalPrice: null,
-    rating: 3.8,
-    stock: 20,
-    category: "Accessories",
-    description: "Premium coffee cup for your morning brew.",
-    images: [
-      "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
-    ],
-    mainImage: "/images/cake4.jpg",
-    additionalInfo: "High-quality ceramic coffee cup.",
-    shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
-    reviews: []
-  },
-  {
     id: 7,
-    name: "Chocolate Chip Cookies",
-    price: 8.00,
-    originalPrice: null,
-    rating: 4.3,
-    stock: 25,
-    category: "Cookies",
-    description: "Freshly baked chocolate chip cookies with premium chocolate chips.",
-    images: [
-     "/images/cake1.jpg",
-      "/images/cake2.jpg",
-      "/images/cake3.jpg",
-      "/images/cake4.jpg",
-      "/images/cake5.jpg"
-    ],
-    mainImage: "/images/cake3.jpg",
-    additionalInfo: "Made with real butter and premium chocolate chips.",
-    shippingInfo: "Free shipping on orders over $50. Standard delivery 2-3 business days.",
-    reviews: []
-  },
-  {
-    id: 8,
     name: "Red Velvet Cake",
     price: 25.00,
     originalPrice: 30.00,
@@ -182,7 +98,7 @@ export const products = [
     reviews: []
   },
   {
-    id: 9,
+    id: 8,
     name: "Strawberry Tart",
     price: 12.00,
     originalPrice: null,
@@ -203,13 +119,13 @@ export const products = [
     reviews: []
   },
   {
-    id: 10,
+    id: 9,
     name: "Vanilla Cupcake",
     price: 6.00,
     originalPrice: null,
     rating: 4.2,
     stock: 30,
-    category: "Cupcakes",
+    category: "Cakes",
     description: "Classic vanilla cupcake with buttercream frosting.",
     images: [
       "/images/cake1.jpg",
@@ -224,7 +140,7 @@ export const products = [
     reviews: []
   },
   {
-    id: 11,
+    id: 10,
     name: "Chocolate Eclair",
     price: 9.00,
     originalPrice: null,
@@ -245,7 +161,7 @@ export const products = [
     reviews: []
   },
   {
-    id: 12,
+    id: 11,
     name: "Lemon Meringue Pie",
     price: 18.00,
     originalPrice: null,
@@ -353,13 +269,9 @@ export const products = [
 
 export const categories = [
   "All",
-  "Donuts",
   "Pastries",
-  "Cupcakes",
-  "Macarons",
   "Cakes",
-  "Accessories",
-  "Cookies",
+  "Donuts",
   "Pies",
   "Desserts"
 ];
@@ -382,36 +294,5 @@ export const teamMembers = [
     name: "Mr Akshay S Gupta",
     position: "Frontend Dev",
     image: "team/Akshay.jpg"
-  }
-];
-
-export const blogPosts = [
-  {
-    id: 1,
-    title: "10 Reasons Why A Cake Is The Best Dessert",
-    date: "27th July 2023",
-    image: "https://picsum.photos/400/300?random=27",
-    excerpt: "Discover why cakes are the ultimate dessert choice..."
-  },
-  {
-    id: 2,
-    title: "The Best Of Autumn And Summer's Flavors In A Cake",
-    date: "27th July 2023",
-    image: "https://picsum.photos/400/300?random=28",
-    excerpt: "Explore seasonal flavors in our latest cake creations..."
-  },
-  {
-    id: 3,
-    title: "DIY Cookies: Bringing Deliciousness To Your Kitchen",
-    date: "27th July 2023",
-    image: "https://picsum.photos/400/300?random=29",
-    excerpt: "Learn how to make delicious cookies at home..."
-  },
-  {
-    id: 4,
-    title: "Great Baking: Finding The Perfect Balance",
-    date: "27th July 2023",
-    image: "https://picsum.photos/400/300?random=30",
-    excerpt: "Master the art of baking with perfect balance..."
   }
 ];
