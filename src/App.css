@@ -147,10 +147,119 @@ body {
   background-size: cover;
 }
 
+/* Carousel wrapper positions arrows */
+.cards-carousel-wrapper {
+  position: relative;
+  margin-top: 20px;
+}
+
+/* Horizontally scrollable row */
+.cards-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f5f5f5;
+  padding-bottom: 8px;
+}
+
+/* Hide native scrollbars if you want */
+.cards-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+.cards-carousel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+/* Arrow buttons styling */
+.carousel-arrow-left,
+.carousel-arrow-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  font-size: 2rem;
+  color: #d6a47a;
+  z-index: 2;
+  padding: 0.25em 0.5em;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.carousel-arrow-left:hover,
+.carousel-arrow-right:hover {
+  background: #faf8f7;
+}
+
+.carousel-arrow-left {
+  left: -2.5rem;
+}
+
+.carousel-arrow-right {
+  right: -2.5rem;
+}
+
+@media (max-width: 768px) {
+  .carousel-arrow-left {
+    left: -1.5rem;
+  }
+  .carousel-arrow-right {
+    right: -1.5rem;
+  }
+}
+
 /* Promotional Section  */
-.promotional-section {
-  background-image: url("Banner/banner2.jpg");
-  background-size: cover;
+.video-section {
+  background: #222;
+  padding: 0;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.promo-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  border-radius: 0;
+  z-index: 1;
+}
+
+.promo-landscape {
+  display: block;
+
+}
+.promo-portrait {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .video-container {
+    height: 720px;
+  }
+  .promo-landscape {
+    display: none;
+  }
+  .promo-portrait {
+    display: block;
+  }
 }
 
 /* Newsletter Section */
@@ -352,7 +461,6 @@ body {
 }
 
 .team-image {
-  height: 300px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -464,7 +572,6 @@ body {
   border-radius: 8px;
 }
 
-
 @media (max-width: 767.98px) {
   .header-top .social-icons {
     position: absolute;
@@ -495,11 +602,10 @@ body {
   .col-lg-3.home-grid-col,
   .col-md-4.home-grid-col,
   .col-sm-6.home-grid-col {
-    flex: 0 0 100%;
     max-width: 100%;
   }
   .home-product-card {
-    margin-bottom: 1.2rem;
+    min-height: 320px;
   }
   .home-product-image {
     height: 180px;

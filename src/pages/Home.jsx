@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { products } from "../services/database";
 import { useCart } from "../context/CartContext";
 import Newsletter from "../components/Newsletter";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Home = () => {
-  const featuredProducts = products.slice(0, 4);
+  const carouselProducts = products.slice(0, 10);
   const { addToCart, isInCart } = useCart();
+
+  // Carousel logic
+  const carouselRef = useRef(null);
+
+  const scrollCarousel = (direction) => {
+    if (carouselRef.current) {
+      const scrollAmount = 300;
+      carouselRef.current.scrollBy({
+        left: direction === "right" ? scrollAmount : -scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
 
   const handleCartClick = (product) => {
     addToCart(product);
@@ -47,67 +61,115 @@ const Home = () => {
             </p>
           </div>
 
-   <div className="row g-4 justify-content-center">
-      {featuredProducts.map((product) => (
-        <div key={product.id} className="col-lg-3 col-md-4 col-sm-6 home-grid-col">
-          <div className="home-product-card h-100 border-0">
-            <img
-              src={product.mainImage}
-              alt={product.name}
-              className="home-product-image"
-              style={{ objectFit: "cover", height: "220px" }}
-            />
-            <div className="card-body text-center">
-              <h5 className="home-card-title home-script-font mb-2">{product.name}</h5>
-              <div className="mb-2">
-                {product.originalPrice && (
-                  <span className="me-2 text-muted" style={{ textDecoration: "line-through" }}>
-                    ${product.originalPrice.toFixed(2)}
-                  </span>
-                )}
-                <span className="fw-bold home-text-danger">${product.price.toFixed(2)}</span>
-              </div>
-              <div className="mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <i
-                    key={i}
-                    className={
-                      product.rating >= i + 1
-                        ? "fas fa-star home-star"
-                        : "far fa-star home-star"
-                    }
-                  ></i>
-                ))}
-                <span className="ms-2 text-muted">({product.rating})</span>
-              </div>
-              <Link to={`/product/${product.id}`} className="btn home-btn-outline-primary w-100">
-                View Details
-              </Link>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
+          {/* Carousel with arrows */}
+          <div className="cards-carousel-wrapper position-relative">
+            {/* Left Arrow */}
+            <button
+              className="carousel-arrow-left"
+              onClick={() => scrollCarousel("left")}
+              aria-label="Scroll left"
+              type="button"
+            >
+              <FaChevronLeft />
+            </button>
 
+            <div
+              className="row g-4 justify-content-center cards-carousel flex-nowrap overflow-auto"
+              style={{ scrollBehavior: "smooth", paddingBottom: "8px" }}
+              ref={carouselRef}
+            >
+              {carouselProducts.map((product) => (
+                <div
+                  key={product.id}
+                  className="col-lg-3 col-md-4 col-sm-6 home-grid-col"
+                >
+                  <div className="home-product-card h-100 border-0">
+                    <img
+                      src={product.mainImage}
+                      alt={product.name}
+                      className="home-product-image"
+                      style={{ objectFit: "cover", height: "220px" }}
+                    />
+                    <div className="card-body text-center">
+                      <h5 className="home-card-title home-script-font mb-2">
+                        {product.name}
+                      </h5>
+                      <div className="mb-2">
+                        {product.originalPrice && (
+                          <span
+                            className="me-2 text-muted"
+                            style={{ textDecoration: "line-through" }}
+                          >
+                            ${product.originalPrice.toFixed(2)}
+                          </span>
+                        )}
+                        <span className="fw-bold home-text-danger">
+                          ${product.price.toFixed(2)}
+                        </span>
+                      </div>
+                      <div className="mb-2">
+                        {[...Array(5)].map((_, i) => (
+                          <i
+                            key={i}
+                            className={
+                              product.rating >= i + 1
+                                ? "fas fa-star home-star"
+                                : "far fa-star home-star"
+                            }
+                          ></i>
+                        ))}
+                        <span className="ms-2 text-muted">
+                          ({product.rating})
+                        </span>
+                      </div>
+                      <Link
+                        to={`/product/${product.id}`}
+                        className="btn home-btn-outline-primary w-100"
+                      >
+                        View Details
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Right Arrow */}
+            <button
+              className="carousel-arrow-right"
+              onClick={() => scrollCarousel("right")}
+              aria-label="Scroll right"
+              type="button"
+            >
+              <FaChevronRight />
+            </button>
+          </div>
         </div>
       </section>
 
       {/* Promotional Section */}
-      <section className="promotional-section text-white py-5">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-8">
-              <h2 className="script-font display-5 mb-3">
-                Celebrate life's special moments with our bespoke cakes and
-                pastries!
-              </h2>
-              <p className="lead mb-4">
-                From birthdays to weddings, anniversaries to celebrations, we
-                create memorable moments with our delicious treats.
-              </p>
-              <button className="btn btn-outline-custom">Shop Now</button>
-            </div>
-          </div>
+      <section className="promotional-section video-section">
+        <div className="video-container">
+          {/* Landscape video for large screens */}
+          <video
+            className="promo-video promo-landscape"
+            src="videos/large_screen.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/promo-landscape.jpg"
+          />
+          {/* Portrait video for small screens */}
+          <video
+            className="promo-video promo-portrait"
+            src="videos/small_screen.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/promo-portrait.jpg"
+          />
         </div>
       </section>
 
@@ -184,26 +246,13 @@ const Home = () => {
             <div className="col-lg-8">
               <div className="text-center">
                 <div className="mb-4">
-                  <i
-                    className="fas fa-star text-warning"
-                    style={{ fontSize: "1.5rem" }}
-                  ></i>
-                  <i
-                    className="fas fa-star text-warning"
-                    style={{ fontSize: "1.5rem" }}
-                  ></i>
-                  <i
-                    className="fas fa-star text-warning"
-                    style={{ fontSize: "1.5rem" }}
-                  ></i>
-                  <i
-                    className="fas fa-star text-warning"
-                    style={{ fontSize: "1.5rem" }}
-                  ></i>
-                  <i
-                    className="fas fa-star text-warning"
-                    style={{ fontSize: "1.5rem" }}
-                  ></i>
+                  {[...Array(5)].map((_, i) => (
+                    <i
+                      key={i}
+                      className="fas fa-star text-warning"
+                      style={{ fontSize: "1.5rem" }}
+                    ></i>
+                  ))}
                 </div>
                 <blockquote className="blockquote">
                   <p className="mb-4 lead">

@@ -1,5 +1,4 @@
 // HTTP Service for API calls
-import { mockFetch } from './mockAPI';
 
 class HttpService {
   constructor() {
@@ -18,10 +17,10 @@ class HttpService {
     };
 
     try {
-      // Use mock fetch in development, real fetch in production
-      const fetchFunction = process.env.NODE_ENV === 'development' ? mockFetch : fetch;
-      const response = await fetchFunction(url, config);
-      
+      // Always use the native fetch here. The project can run an external
+      // mock server (json-server) locally at port 3001 if needed.
+      const response = await fetch(url, config);
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
