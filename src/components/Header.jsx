@@ -69,22 +69,6 @@ const Header = () => {
                     <i className="fab fa-youtube"></i>
                   </a>
                 </div>
-                <div className="d-flex align-items-center">
-                  <a href="#" className="text-decoration-none me-3">
-                    <i className="fas fa-search"></i>
-                  </a>
-                  <Link
-                    to="/cart"
-                    className="text-decoration-none position-relative"
-                  >
-                    <i className="fas fa-shopping-cart"></i>
-                    {getTotalItems() > 0 && (
-                      <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        {getTotalItems()}
-                      </span>
-                    )}
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
@@ -133,6 +117,19 @@ const Header = () => {
                     </Link>
                   </li>
                 </ul>
+              </div>
+              <div className="d-flex align-items-center">
+                <Link
+                  to="/cart"
+                  className="text-decoration-none position-relative"
+                >
+                  <i className="fas fa-shopping-cart"></i>
+                  {getTotalItems() > 0 && (
+                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      {getTotalItems()}
+                    </span>
+                  )}
+                </Link>
               </div>
             </div>
           </nav>

@@ -28,10 +28,6 @@ const Shop = () => {
     }
   });
 
-  const handleCartClick = (product) => {
-    addToCart(product);
-  };
-
   return (
     <div>
       {/* Banner Section */}
@@ -107,34 +103,53 @@ const Shop = () => {
           <div className="row">
             {sortedProducts.map((product) => (
               <div key={product.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div className="card product-card h-100">
+                <div
+                  className="card product-card h-100 text-decoration-none"
+                  style={{ color: "inherit" }}
+                >
                   <div className="product-image-wrapper position-relative">
-                    <img
-                      src={product.mainImage}
-                      className="card-img-top product-image"
-                      alt={product.name}
-                    />
-                    {/* Floating cart/tick icon */}
+                    <Link to={`/product/${product.id}`} tabIndex={-1}>
+                      <img
+                        src={product.mainImage}
+                        className="card-img-top product-image"
+                        alt={product.name}
+                      />
+                    </Link>
                     <button
                       className={`cart-icon-btn${
                         isInCart(product.id) ? " added" : ""
                       }`}
                       type="button"
-                      onClick={() => addToCart(product)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        addToCart(product);
+                      }}
                       aria-label={
                         isInCart(product.id) ? "Added to cart" : "Add to cart"
                       }
+                      style={{
+                        position: "absolute",
+                        top: 10,
+                        right: 10,
+                        zIndex: 5,
+                        background: "white",
+                        border: "none",
+                        borderRadius: "50%",
+                        padding: "6px",
+                      }}
                     >
                       <img
                         src={
                           isInCart(product.id)
-                            ? "/images/tick.png"
-                            : "/images/cart.png"
+                            ? "/Icons/tick.png"
+                            : "/Icons/cart.png"
                         }
                         alt={
                           isInCart(product.id) ? "Added to cart" : "Add to cart"
                         }
                         className="cart-icon-img"
+                        style={{ width: 24, height: 24 }}
                       />
                     </button>
                   </div>
@@ -166,15 +181,6 @@ const Shop = () => {
                           ({product.rating})
                         </span>
                       </div>
-                    </div>
-                    <div className="d-flex gap-2 justify-content-center">
-                      <Link
-                        to={`/product/${product.id}`}
-                        className="btn btn-outline-primary btn-sm flex-fill"
-                      >
-                        View Details
-                      </Link>
-                      {/* Cart/tick button REMOVED from here */}
                     </div>
                   </div>
                 </div>
@@ -218,8 +224,6 @@ const Shop = () => {
           </div>
         </div>
       </section>
-
-      {/* Newsletter */}
       <Newsletter />
     </div>
   );

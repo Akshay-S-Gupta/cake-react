@@ -49,7 +49,7 @@ const PaymentSuccess = () => {
       {showDelivery && (
         <div className="delivery-image-container mb-5">
           <img
-            src="/images/delivery2.png"
+            src="/Icons/delivery2.png"
             alt="Delivery Guy"
             className="delivery-image"
           />

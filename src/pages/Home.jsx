@@ -159,7 +159,9 @@ const Home = () => {
                 finest ingredients and traditional techniques to create
                 memorable experiences for our customers.
               </p>
-              <button className="btn btn-primary-custom">Read More</button>
+              <Link to="/about" className="btn btn-primary-custom btn-lg">
+                About Us
+              </Link>
             </div>
             <div className="col-lg-6">
               <img
