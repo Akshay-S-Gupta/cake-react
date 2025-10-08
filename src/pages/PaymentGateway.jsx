@@ -17,7 +17,7 @@ const PaymentGateway = () => {
     setTimeout(() => {
       setIsProcessing(false);
       clearCart();
-      navigate("/payment-success"); // << Go to animated success page
+      navigate("/payment-success");
     }, 2500);
   };
 
