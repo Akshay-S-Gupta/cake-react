@@ -1,7 +1,7 @@
 /* Color Palette */
 :root {
-  --sky-blue: #63b3ed;         /* Vibrant sky blue */
-  --sky-blue-light: #e3f2fd;   /* Soft sky blue background */
+  --sky-blue: #63b3ed;     
+  --sky-blue-light: #e3f2fd;   
   --blue-gradient: linear-gradient(90deg, #63b3ed 0%, #4299e1 100%);
   --input-bg: #f8fafc;
   --input-border: #cbd5e1;

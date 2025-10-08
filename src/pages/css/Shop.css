@@ -1,4 +1,4 @@
-/* Product Card Container - Compact & Responsive */
+/* Product Card Container*/
 .product-card,
 .card.product-card {
   display: flex;
@@ -18,11 +18,11 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Image Wrapper for Overlay Icon - Reduced Height */
+/* Image Wrapper  */
 .product-image-wrapper {
   position: relative;
   width: 100%;
-  height: 300px !important; /* More compact */
+  height: 300px !important; 
   min-height: 300px !important;
 }
 
@@ -53,12 +53,10 @@
   transition: background 0.2s, box-shadow 0.2s;
 }
 
-/* Show cart/tick icon ONLY when hovering image wrapper */
 .product-image-wrapper:hover .cart-icon-btn {
   display: block;
 }
 
-/* If product is in cart, tint the icon ONLY when hovered (tick icon) */
 .product-image-wrapper:hover .cart-icon-btn.added {
   background: #e9ffe8;
 }
@@ -145,16 +143,16 @@
     display: block;
   }
 
-  /* Hide ratings and anything that creates space for ratings */
+  
   .product-card .product-rating,
   .product-card .fa-star,
   .product-card .card-text.product-rating,
   .product-card .rating-value,
   .product-card .rating-stars,
   .product-card .ms-2.text-muted,
-  .product-card .product-rating-row,  /* Hide the whole row or container */
-  .product-card .rating-section,      /* Hide other rating wrappers */
-  .product-card .ratings,             /* Just in case your markup uses this */
+  .product-card .product-rating-row, 
+  .product-card .rating-section,      
+  .product-card .ratings,             
   .product-card .product-info .product-rating,
   .product-card .product-rating-block {
     display: none !important;
@@ -162,8 +160,6 @@
     margin: 0 !important;
     padding: 0 !important;
   }
-
-  /* Remove extra vertical gap in the info section above/below rating */
   .product-info {
     margin-bottom: 0.2rem !important;
     padding-bottom: 0 !important;
