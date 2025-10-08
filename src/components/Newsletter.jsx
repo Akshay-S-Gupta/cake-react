@@ -65,7 +65,7 @@ const Newsletter = () => {
             </button>
           </form>
           {message && (
-            <div className={`mt-3 ${message.includes('Thank you') ? 'text-success' : 'text-danger'}`}>
+            <div className={`mt-3 ${message.includes('Thank you') ? 'text-light' : 'text-danger'}`}>
               {message}
             </div>
           )}
