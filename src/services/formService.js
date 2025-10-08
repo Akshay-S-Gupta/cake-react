@@ -142,7 +142,8 @@ export const formService = {
   },
 
   validatePhone(phone) {
-     return /^[6-9][0-9]{9}$/.test(phone);
+    // Indian 10-digit mobile number pattern starting with 6-9
+    const phoneRegex = /^[6-9][0-9]{9}$/;
     return phoneRegex.test(phone);
   },
 

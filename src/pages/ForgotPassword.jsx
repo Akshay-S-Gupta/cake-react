@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { userService } from '../services/userService';
 import { formService } from '../services/formService';
 import Newsletter from '../components/Newsletter';
 
@@ -27,7 +28,7 @@ const ForgotPassword = () => {
     setMessage('');
 
     try {
-      const result = await formService.resetPasswordHTTP(email);
+      const result = await userService.resetPassword(email);
       if (result.success) {
         setMessage('Password reset instructions have been sent to your email address.');
         setEmail('');

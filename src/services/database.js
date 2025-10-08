@@ -86,7 +86,7 @@ export const products = [
     category: "Cakes",
     description: "Classic red velvet cake with cream cheese frosting.",
     images: [
-     "/images/cakes/Red_Velvet_Cake/img1.jpg",
+      "/images/cakes/Red_Velvet_Cake/img1.jpg",
       "/images/cakes/Red_Velvet_Cake/img2.jpg",
       "/images/cakes/Red_Velvet_Cake/img3.jpg",
       "/images/cakes/Red_Velvet_Cake/img4.jpg",
@@ -107,7 +107,7 @@ export const products = [
     category: "Pastries",
     description: "Delicate tart with fresh strawberries and vanilla cream.",
     images: [
-     "/images/pastries/Strawberry_Tart/img1.jpg",
+      "/images/pastries/Strawberry_Tart/img1.jpg",
       "/images/pastries/Strawberry_Tart/img2.jpg",
       "/images/pastries/Strawberry_Tart/img3.jpg",
       "/images/pastries/Strawberry_Tart/img4.jpg",
@@ -149,7 +149,7 @@ export const products = [
     category: "Pies",
     description: "Tangy lemon filling with fluffy meringue topping.",
     images: [
-     "/images/pies/img1.jpg",
+      "/images/pies/img1.jpg",
       "/images/pies/img2.jpg",
       "/images/pies/img3.jpg",
       "/images/pies/img4.jpg",
@@ -170,7 +170,7 @@ export const products = [
     category: "Desserts",
     description: "Warm cinnamon roll with cream cheese glaze.",
     images: [
-     "/images/desserts/Cinnamon_Roll/img1.jpg",
+      "/images/desserts/Cinnamon_Roll/img1.jpg",
       "/images/desserts/Cinnamon_Roll/img2.jpg",
       "/images/desserts/Cinnamon_Roll/img3.jpg",
       "/images/desserts/Cinnamon_Roll/img4.jpg",
@@ -191,7 +191,7 @@ export const products = [
     category: "Desserts",
     description: "Classic Italian tiramisu with coffee and mascarpone.",
     images: [
-     "/images/desserts/Tiramisu/img1.jpg",
+      "/images/desserts/Tiramisu/img1.jpg",
       "/images/desserts/Tiramisu/img2.jpg",
       "/images/desserts/Tiramisu/img3.jpg",
       "/images/desserts/Tiramisu/img4.jpg",
@@ -212,7 +212,7 @@ export const products = [
     category: "Cakes",
     description: "Rich New York style cheesecake with graham cracker crust.",
     images: [
-     "/images/cakes/Cheesecake/img1.jpg",
+      "/images/cakes/Cheesecake/img1.jpg",
       "/images/cakes/Cheesecake/img2.jpg",
       "/images/cakes/Cheesecake/img3.jpg",
       "/images/cakes/Cheesecake/img4.jpg",
@@ -233,7 +233,7 @@ export const products = [
     category: "Pastries",
     description: "Mixed fruit tart with vanilla pastry cream.",
     images: [
-     "/images/pastries/Fruit_Tart/img1.jpg",
+      "/images/pastries/Fruit_Tart/img1.jpg",
       "/images/pastries/Fruit_Tart/img2.jpg",
       "/images/pastries/Fruit_Tart/img3.jpg",
       "/images/pastries/Fruit_Tart/img4.jpg",

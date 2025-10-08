@@ -1,10 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useUser } from '../context/UserContext';
 import Newsletter from '../components/Newsletter';
 
 const Cart = () => {
   const { items, removeFromCart, updateQuantity, getTotalPrice } = useCart();
+  const { isAuthenticated } = useUser();
+  const navigate = useNavigate();
 
   const handleQuantityChange = (productId, newQuantity) => {
     if (newQuantity <= 0) {
@@ -198,9 +201,21 @@ const Cart = () => {
                     <Link to="/shop" className="btn btn-outline-secondary">
                       CONTINUE SHOPPING
                     </Link>
-                    <Link to="/checkout" className="btn btn-primary-custom">
+                    <button
+                      type="button"
+                      className="btn btn-primary-custom"
+                      onClick={() => {
+                        if (!isAuthenticated) {
+                          // prompt login and redirect to signin
+                          alert('Please sign in to proceed to checkout');
+                          navigate('/signin');
+                          return;
+                        }
+                        navigate('/checkout');
+                      }}
+                    >
                       CHECKOUT
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>
