@@ -124,7 +124,6 @@
   .card.product-card {
     min-height: 180px !important;
     margin-bottom: 12px !important;
-    padding-bottom: 16px !important;
   }
 
   .product-image-wrapper {
@@ -159,10 +158,6 @@
     height: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
-  }
-  .product-info {
-    margin-bottom: 0.2rem !important;
-    padding-bottom: 0 !important;
   }
   /* If ratings are in their own div, remove its margin too */
   .product-rating-row,
