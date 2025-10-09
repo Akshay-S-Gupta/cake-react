@@ -81,7 +81,7 @@ const Shop = () => {
           {/* Category Filter */}
           <div className="row mb-4">
             <div className="col-12">
-              <div className="d-flex flex-wrap gap-2">
+              <div className="d-flex flex-wrap gap-2 justify-content-center">
                 {categories.map((category) => (
                   <button
                     key={category}
